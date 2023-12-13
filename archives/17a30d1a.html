@@ -1,0 +1,646 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>《动手学深度学习》学习笔记 | 槐月初叁的个人博客</title><meta name="author" content="槐月初叁"><meta name="copyright" content="槐月初叁"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="《动手学深度学习》学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《动手学深度学习》学习笔记">
+<meta property="og:url" content="https://huaiyuechusan.gitee.io/archives/17a30d1a.html">
+<meta property="og:site_name" content="槐月初叁的个人博客">
+<meta property="og:description" content="《动手学深度学习》学习笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/huaiyuechusan/backgroud-image/raw/master/image/New Year-2023-11-2221:47:25.png">
+<meta property="article:published_time" content="2022-12-15T17:23:00.000Z">
+<meta property="article:modified_time" content="2023-12-13T08:26:49.776Z">
+<meta property="article:author" content="槐月初叁">
+<meta property="article:tag" content="学习技术">
+<meta property="article:tag" content="深度学习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/huaiyuechusan/backgroud-image/raw/master/image/New Year-2023-11-2221:47:25.png"><link rel="shortcut icon" href="/./img/config_img/%E9%98%B3%E5%85%89%E5%B0%8F%E7%8C%AB.jpg"><link rel="canonical" href="https://huaiyuechusan.gitee.io/archives/17a30d1a"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '《动手学深度学习》学习笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-12-13 16:26:49'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/echarts@4.9.0/dist/echarts.min.js"></script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css"><link rel="stylesheet" href="/./css/runtime.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/./img/config_img/%E9%98%B3%E5%85%89%E5%B0%8F%E7%8C%AB.jpg" onerror="onerror=null;src='./img/config_img/蓝天.jpg'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://gitee.com/huaiyuechusan/backgroud-image/raw/master/image/New Year-2023-11-2221:47:25.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">槐月初叁的个人博客</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">《动手学深度学习》学习笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-12-15T17:23:00.000Z" title="发表于 2022-12-16 01:23:00">2022-12-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-12-13T08:26:49.776Z" title="更新于 2023-12-13 16:26:49">2023-12-13</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">13.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>40分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="《动手学深度学习》学习笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><meta name="referrer" content="no-referrer" />
+
+<h1 id="深度学习理论与应用"><a href="#深度学习理论与应用" class="headerlink" title="深度学习理论与应用"></a><strong>深度学习理论与应用</strong></h1><p> 摘要： 深度学习（Deep Learning）是一个近几年备受关注的研究领域，在机器学习中起着重要的作用。深度学习通过建立、模拟人脑的分层结构来实现对外部输入的数据进行从低级到高级的特征提取，从而能够解释外部数据。深度学习是学习样本数据的内在规律和表示层次，这些学习过程中获得的信息对诸如文字，图像和声音等数据的解释有很大的帮助。它的最终目标是让机器能够像人一样具有分析学习能力，能够识别文字、图像和声音等数据。本文首先介绍了深度学习的基础知识，包括线性回归、多层感知机、卷积神经网络、循环神经网络的基本原理，在其基础上讲解网络优化算法进一步优化网络和自定义网络实现自己的网络。然后介绍深度学习的应用，具体包括单发多框目标检测、语义分割、风格迁移、中英文翻译系统。最后总结我对本课程学习的心得体会和建议。</p>
+<p> 关键词：深度学习模型；深度学习应用；自定义网络实现；优化算法</p>
+<h2 id="1-引言"><a href="#1-引言" class="headerlink" title="1 引言"></a>1 引言</h2><h3 id="1-1起源"><a href="#1-1起源" class="headerlink" title="1.1起源"></a>1.1起源</h3><p>早在17世纪，雅各比·伯努利（1655–1705）提出了描述只有两种结果的随机过程（如抛掷一枚硬币）的伯努利分布。大约一个世纪之后，卡尔·弗里德里希·高斯（1777–1855）发明了今日仍广泛用在从保险计算到医学诊断等领域的最小二乘法。概率论、统计学和模式识别等工具帮助自然科学的实验学家们从数据回归到自然定律，从而发现了如欧姆定律（描述电阻两端电压和流经电阻电流关系的定律）这类可以用线性模型完美表达的一系列自然法则。</p>
+<p>现代统计学在20世纪的真正起飞要归功于数据的收集和发布。统计学巨匠之一罗纳德·费雪（1890–1962）对统计学理论和统计学在基因学中的应用功不可没。他发明的许多算法和公式，例如线性判别分析和费雪信息，仍经常被使用。即使是他在1936年发布的Iris数据集，仍然偶尔被用于演示机器学习算法。</p>
+<p>克劳德·香农（1916–2001）的信息论以及阿兰·图灵 （1912–1954）的计算理论也对机器学习有深远影响。图灵在他著名的论文《计算机器与智能》中提出了“机器可以思考吗？”这样一个问题。在他描述的“图灵测试”中，如果一个人在使用文本交互时不能区分他的对话对象到底是人类还是机器的话，那么即可认为这台机器是有智能的。时至今日，智能机器的发展可谓日新月异。</p>
+<p>另一个对深度学习有重大影响的领域是神经科学与心理学。既然人类显然能够展现出智能，那么对于解释并逆向工程人类智能机理的探究也在情理之中。最早的算法之一是由唐纳德·赫布（1904–1985）正式提出的。在他开创性的著作《行为的组织》中，他提出神经是通过正向强化来学习的，即赫布理论。赫布理论是感知机学习算法的原型，并成为支撑今日深度学习的随机梯度下降算法的基石：强化合意的行为、惩罚不合意的行为，最终获得优良的神经网络参数。</p>
+<p>在最初的快速发展之后，自约1995年起至2005年，大部分机器学习研究者的视线从神经网络上移开了。这是由于多种原因。首先，训练神经网络需要极强的计算力。尽管20世纪末内存已经足够，计算力却不够充足。其次，当时使用的数据集也相对小得多。费雪在1936年发布的的Iris数据集仅有150个样本，并被广泛用于测试算法的性能。具有6万个样本的MNIST数据集在当时已经被认为是非常庞大了，尽管它如今已被认为是典型的简单数据集。由于数据和计算力的稀缺，从经验上来说，如核方法、决策树和概率图模型等统计工具更优。它们不像神经网络一样需要长时间的训练，并且在强大的理论保证下提供可以预测的结果。</p>
+<p>互联网的崛起、价廉物美的传感器和低价的存储器令我们越来越容易获取大量数据。加之便宜的计算力，尤其是原本为电脑游戏设计的GPU的出现，上文描述的情况改变了许多。一瞬间，原本被认为不可能的算法和模型变得触手可及。    </p>
+<h3 id="1-2优点"><a href="#1-2优点" class="headerlink" title="1.2优点"></a>1.2优点</h3><p>深度学习可以逐级表示越来越抽象的概念或模式。以图像为例，它的输入是一堆原始像素值。深度学习模型中，图像可以逐级表示为特定位置和角度的边缘、由边缘组合得出的花纹、由多种花纹进一步汇合得到的特定部位的模式等。最终，模型能够较容易根据更高级的表示完成给定的任务，如识别图像中的物体。值得一提的是，作为表征学习的一种，深度学习将自动找出每一级表示数据的合适方式。因此，深度学习的一个外在特点是端到端的训练。也就是说，并不是将单独调试的部分拼凑起来组成一个系统，而是将整个系统组建好之后一起训练。</p>
+<p>相对其它经典的机器学习方法而言，深度学习的不同在于：对非最优解的包容、对非凸非线性优化的使用，以及勇于尝试没有被证明过的方法。这种在处理统计问题上的新经验主义吸引了大量人才的涌入，使得大量实际问题有了更好的解决方案。尽管大部分情况下需要为深度学习修改甚至重新发明已经存在数十年的工具，但是这绝对是一件非常有意义并令人兴奋的事。</p>
+<h3 id="1-3应用领域"><a href="#1-3应用领域" class="headerlink" title="1.3应用领域"></a>1.3应用领域</h3><p>深度学习是一个复杂的机器学习算法，在语音和图像识别方面取得的效果，远远超过先前相关技术。深度学习在搜索技术，数据挖掘，机器学习，机器翻译，自然语言处理，多媒体学习，语音，推荐和个性化技术，以及其他相关领域都取得了很多成果。深度学习使机器模仿视听和思考等人类的活动，解决了很多复杂的模式识别难题，使得人工智能相关技术取得了很大进步。</p>
+<p>物体识别也经历了漫长的发展过程。在2010年从图像中识别出物体的类别仍是一个相当有挑战性的任务。当年日本电气、伊利诺伊大学香槟分校和罗格斯大学团队在ImageNet基准测试上取得了28%的前五错误率。到2017年，这个数字降低到了2.25%。研究人员在鸟类识别和皮肤癌诊断上，也取得了同样惊世骇俗的成绩。</p>
+<p>博弈曾被认为是人类智能最后的堡垒。自使用时间差分强化学习玩双陆棋的TD-Gammon开始，算法和算力的发展催生了一系列在博弈上使用的新算法。与双陆棋不同，国际象棋有更复杂的状态空间和更多的可选动作。“深蓝”用大量的并行、专用硬件和博弈树的高效搜索打败了加里·卡斯帕罗夫。围棋因其庞大的状态空间被认为是更难的游戏，AlphaGo在2016年用结合深度学习与蒙特卡罗树采样的方法达到了人类水准。对德州扑克游戏而言，除了巨大的状态空间之外，更大的挑战是博弈的信息并不完全可见，例如看不到对手的牌。而“冷扑大师”用高效的策略体系超越了人类玩家的表现。以上的例子都体现出了先进的算法是人工智能在博弈上的表现提升的重要原因。</p>
+<p>机器学习进步的另一个标志是自动驾驶汽车的发展。尽管距离完全的自主驾驶还有很长的路要走，但诸如Tesla、NVIDIA、 MobilEye和Waymo这样的公司发布的具有部分自主驾驶功能的产品展示出了这个领域巨大的进步。完全自主驾驶的难点在于它需要将感知、思考和规则整合在同一个系统中。目前，深度学习主要被应用在计算机视觉的部分，剩余的部分还是需要工程师们的大量调试。</p>
+<p>以上列出的仅仅是近年来深度学习所取得的成果的冰山一角。机器人学、物流管理、计算生物学、粒子物理学和天文学近年来的发展也有一部分要归功于深度学习。可以看到，深度学习已经逐渐演变成一个工程师和科学家皆可使用的普适工具。</p>
+<h2 id="2-深度学习基础"><a href="#2-深度学习基础" class="headerlink" title="2    深度学习基础"></a>2    深度学习基础</h2><h3 id="2-1-线性回归"><a href="#2-1-线性回归" class="headerlink" title="2.1 线性回归"></a>2.1 线性回归</h3><p>回归（regression）是能为一个或多个自变量与因变量之间关系建模的一类方法。在自然科学和社会科学领域，回归经常用来表示输入和输出之间的关系。</p>
+<p>线性回归（linear regression）可以追溯到19世纪初，它在回归的各种标准工具中最简单而且最流行。线性回归基于几个简单的假设：首先，假设自变量x和因变量y之间的关系是线性的，即y可以表示为x中元素的加权和，这里通常允许包含观测值的一些噪声；其次，我们假设任何噪声都比较正常，如噪声遵循正态分布。</p>
+<h4 id="2-1-1-数学模型"><a href="#2-1-1-数学模型" class="headerlink" title="2.1.1 数学模型"></a>2.1.1 数学模型</h4><p>（1）考虑单个样本，当我们的输入包含d个特征时，我们将预测结果yˆ（通常使用“尖角”符号表示y的估计值）表示为：</p>
+<p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620080.png" alt="img"></p>
+<p>将所有特征放到向量x∈Rd中，并将所有权重放到向量w∈Rd中，向量x对应于单个数据样本的特征，我们可以用点积形式来简洁地表达模型：</p>
+<p>​                                                                                            <img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620983.png" alt="img"></p>
+<p>（2）考虑整个数据集，对于特征集合X，预测值yˆ∈Rn可以通过矩阵-向量乘法表示为：</p>
+<p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620985.png" alt="img"></p>
+<p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620986.jpg" alt="img"></p>
+<p>​                                                                                    线性回归模型的一个单层网络神经</p>
+<p>​                <img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620987.jpg" alt="img"> </p>
+<p>​                                                                                            线性回归数据拟合效果</p>
+<h4 id="2-1-3-损失函数"><a href="#2-1-3-损失函数" class="headerlink" title="2.1.3 损失函数"></a>2.1.3 损失函数</h4><p>在我们开始考虑如何用模型拟合（fit）数据之前，我们需要确定一个拟合程度的度量。损失函数（loss function）能够量化目标的实际值与预测值之间的差距。通常我们会选择非负数作为损失，且数值越小表示损失越小，完美预测时的损失为0。回归问题中最常用的损失函数是平方误差函数。由于平方误差函数中的二次方项，估计值yˆ(i)和观测值y(i)之间较大的差异将导致更大的损失。为了度量模型在整个数据集上的质量，我们需计算在训练集n个样本上的损失均值（也等价于求和）。MSE均方差损失函数（L2损失函数）表示如下：</p>
+<p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620988.png" alt="img"></p>
+<p>在训练模型时，我们希望寻找一组参数（w∗，b∗），这组参数能最小化在所有训练样本上的总损失。线性回归问题的形式化表示：</p>
+<p>​                                                                            <img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620989.png" alt="img"> </p>
+<p>2.1.4 训练和预测</p>
+<p>线性回归整个算法训练流程：</p>
+<p>• 初始化参数</p>
+<p>• 重复以下训练，直到完成</p>
+<p>– 计算梯度g ← ∂(w,b)                                    <img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620990.png" alt="img"></p>
+<p>– 更新参数(w, b) ← (w, b) − ηg</p>
+<h4 id="2-1-5-优缺点"><a href="#2-1-5-优缺点" class="headerlink" title="2.1.5 优缺点"></a>2.1.5 优缺点</h4><p>优点：</p>
+<p>①善于获取数据集中的线性关系；</p>
+<p>②适用于在已有了一些预先定义好的变量并且需要一个简单的预测模型的情况下使用；</p>
+<p>③训练速度和预测速度较快；</p>
+<p>④在小数据集上表现很好；</p>
+<p>⑤结果可解释，并且易于说明；</p>
+<p>⑥当新增数据时，易于更新模型；</p>
+<p>⑦不需要进行参数调整（正则化线性模型需要调整正则化参数）；</p>
+<p>⑧不需要特征缩放（正则化线性模型需要特征缩放）；</p>
+<p>缺点：</p>
+<p>①不适用于非线性数据；</p>
+<p>②预测精确度较低；</p>
+<p>③可能会出现过度拟合（正则化模型可以抵消这个影响）；</p>
+<p>④分离信号和噪声的效果不理想，在使用前需要去掉不相关的特征；</p>
+<p>⑤不了解数据集中的特征交互；</p>
+<h3 id="2-2-多层感知机"><a href="#2-2-多层感知机" class="headerlink" title="2.2 多层感知机"></a>2.2 多层感知机</h3><p>最简单的深度网络称为多层感知机（MLP）。多层感知机由多层神经元组成，每一层与它的上一层相连，从中接收输入。同时每一层也与它的下一层相连，影响当前层的神经元。</p>
+<p>多层感知机在输出层和输入层之间增加一个或多个全连接隐藏层，并通过激活函数转换隐藏层的输出。</p>
+<h4 id="2-2-1-数学模型"><a href="#2-2-1-数学模型" class="headerlink" title="2.2.1 数学模型"></a>2.2.1 数学模型</h4><p>MLP（FNN）工作原理：多层感知机首先是输入层，中间是隐藏层，最后是输出层。</p>
+<p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620991.png" alt="img"></p>
+<h4 id="2-2-2-原理图"><a href="#2-2-2-原理图" class="headerlink" title="2.2.2 原理图"></a>2.2.2 原理图</h4><p>​                <img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620992.jpg" alt="img"> </p>
+<p>​                                                             一个单隐藏层的多层感知机，具有5个隐藏层</p>
+<h4 id="2-2-3-隐藏层"><a href="#2-2-3-隐藏层" class="headerlink" title="2.2.3 隐藏层"></a>2.2.3 隐藏层</h4><p>激活函数（activation function）通过计算加权和并加上偏置来确定神经元是否应该被激活，它们将输入信号转换为输出的可微运算。大多数激活函数都是非线性的。</p>
+<p>常用的激活函数包括ReLU函数、sigmoid函数和tanh函数。</p>
+<p>（1） ReLU函数</p>
+<p>ReLU提供了一种非常简单的非线性变换。给定元素x，ReLU函数被定义为该元素与0的最大值。ReLU函数通过将相应的活性值设为0，仅保留正元素并丢弃所有负元素。当输入为负时，ReLU函数的导数为0，而当输入为正时，ReLU函数的导数为1。ReLU函数之所以是最受欢迎的激活函数，原因是它求导表现得特别好：要么让参数消失，要么让参数通过。这使得优化表现得更好，并且ReLU减轻了困扰以往神经网络的梯度消失问题。</p>
+<p>​                                                                                    <img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620993.png" alt="img"></p>
+<p>（2） sigmoid函数</p>
+<p>对于一个定义域在R中的输入，sigmoid函数将输入变换为区间（0，1）上的输出。因此，sigmoid通常称为挤压函数（squashing function）：它将范围（-inf, inf）中的任意输入压缩到区间（0，1）中的某个值：</p>
+<p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620994.png" alt="img"></p>
+<p>注意，当输入为0时，sigmoid函数的导数达到最大值0.25；而输入在任一方向上越远离0点时，导数越接近0。</p>
+<p>（3） tanh函数</p>
+<p>与sigmoid函数类似，tanh（双曲正切）函数也能将其输入压缩转换到区间（-1，1）上。tanh函数的公式如下：</p>
+<p>​                                                                                    <img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620995.png" alt="img"></p>
+<p>当输入接近0时，tanh函数的导数接近最大值1。与我们在sigmoid函数图像中看到的类似，输入在任一方向上越远离0点，导数越接近0。</p>
+<h4 id="2-2-4-训练和预测"><a href="#2-2-4-训练和预测" class="headerlink" title="2.2.4 训练和预测"></a>2.2.4 训练和预测</h4><p>①初始化模型参数</p>
+<p>②定义激活函数</p>
+<p>③定义模型</p>
+<p>④定义损失函数    </p>
+<p>⑤进行模型训练</p>
+<h4 id="2-2-5模型选择："><a href="#2-2-5模型选择：" class="headerlink" title="2.2.5模型选择："></a>2.2.5模型选择：</h4><p>K折交叉验证选择最佳模型</p>
+<h4 id="2-2-6欠拟合和过拟合"><a href="#2-2-6欠拟合和过拟合" class="headerlink" title="2.2.6欠拟合和过拟合"></a>2.2.6欠拟合和过拟合</h4><p>将模型在训练数据上拟合的比在潜在分布中更接近的现象称为过拟合（overfitting），用于对抗过拟合的技术称为正则化（regularization）。</p>
+<p>由于我们的训练和验证误差之间的泛化误差很小，我们有理由相信可以用一个更复杂的模型降低训练误差。这种现象被称为欠拟合（underfitting）。</p>
+<p>训练误差（training error）是指，模型在训练数据集上计算得到的误差。泛化误差（generalization error）是指，模型应用在同样从原始样本的分布中抽取的无限多数据样本时，模型误差的期望。</p>
+<p>两种防止过拟合的方法：权重衰减和暂退法（dropout）。</p>
+<h4 id="2-2-7数值稳定性："><a href="#2-2-7数值稳定性：" class="headerlink" title="2.2.7数值稳定性："></a>2.2.7数值稳定性：</h4><p>梯度消失和梯度爆炸是深度网络中常见的问题。在参数初始化时需要非常小心，以确保梯度和参数可以得到很好的控制。</p>
+<h4 id="2-2-8优缺点"><a href="#2-2-8优缺点" class="headerlink" title="2.2.8优缺点"></a>2.2.8优缺点</h4><p>优点：可以学习非线性模型，并且可以实时学习。</p>
+<p>缺点：多层感知机随着层数越多，会出现过拟合（权重衰减和暂退法可以预防），参数难以调试，梯度弥散问题。再图像识别时，将图像数据展平成一维向量为忽略了每个图像的空间结构信息，且各层均为连接层，计算量巨大。</p>
+<h3 id="2-3-卷积神经网络"><a href="#2-3-卷积神经网络" class="headerlink" title="2.3 卷积神经网络"></a>2.3 卷积神经网络</h3><p>卷积神经网络（convolutional neural network，CNN）是一类强大的、为处理图像数据而设计的神经网络。基于卷积神经网络架构的模型在计算机视觉领域中已经占主导地位，当今几乎所有的图像识别、目标检测或语义分割相关的学术竞赛和商业应用都以这种方法为基础。卷积神经网络需要的参数少于全连接架构的网络，而且卷积也很容易用GPU并行计算。因此卷积神经网络除了能够高效地采样从而获得精确的模型，还能够高效地计算。</p>
+<p>构成卷积网络主干的基本元素包括：卷积层本身、填充（padding）和步幅（stride）、用于在相邻区域汇聚信息的汇聚层（pooling）、在每一层中多通道（channel）。</p>
+<h4 id="2-3-1-数学模型"><a href="#2-3-1-数学模型" class="headerlink" title="2.3.1 数学模型"></a>2.3.1 数学模型</h4><p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620996.png" alt="img"></p>
+<p>是一个卷积层（convolutional layer），而卷积神经网络是包含卷积层的一类特殊的神经网络。在深度学习中，V被称为卷积核（convolution kernel）或者滤波器（filter），亦或简单地称之为该卷积层的权重，通常该权重是可学习的参数。</p>
+<h4 id="2-3-2-原理图（LeNet-5）"><a href="#2-3-2-原理图（LeNet-5）" class="headerlink" title="2.3.2 原理图（LeNet-5）"></a>2.3.2 原理图（LeNet-5）</h4><p>​                                                                            <img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620997.jpg" alt="img"></p>
+<p>​                                                                                                    LeNet-5模型                                                                     </p>
+<p>​                                                                 <img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620998.jpg" alt="img"></p>
+<p>​                                                                                                    互相关运算 </p>
+<h4 id="2-3-3-填充和步幅"><a href="#2-3-3-填充和步幅" class="headerlink" title="2.3.3 填充和步幅"></a>2.3.3 填充和步幅</h4><p>填充（padding）：在输入图像的边界填充元素（通常填充元素是0）。</p>
+<p>卷积神经网络中卷积核的高度和宽度通常为奇数，例如1、3、5或7。选择奇数的好处是，保持空间维度的同时，我们可以在顶部和底部填充相同数量的行，在左侧和右侧填充相同数量的列。</p>
+<pre><code>                   ![img](https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620999.jpg)
+</code></pre><p>​                                                                                            带填充的二维互相关。</p>
+<p>在计算互相关时，卷积窗口从输入张量的左上角开始，向下、向右滑动。我们将每次滑动元素的数量称为步幅（stride）。</p>
+<p>​                                           <img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620000.jpg" alt="img"></p>
+<p>​                                                                    垂直步幅为 3，水平步幅为 2 的二维互相关运算</p>
+<h4 id="2-3-4多输入多输出通道"><a href="#2-3-4多输入多输出通道" class="headerlink" title="2.3.4多输入多输出通道"></a>2.3.4多输入多输出通道</h4><p>当输入包含多个通道时，需要构造一个与输入数据具有相同输入通道数的卷积核，以便与输入数据进行互相关运算。</p>
+<p>用c<sub>i</sub>和c<sub>o</sub>分别表示输入和输出通道的数目，并让k<sub>h</sub>和k<sub>w</sub>为卷积核的高度和宽度。为了获得多个通道的输出，我们可以为每个输出通道创建一个形状为c<sub>i</sub>×k<sub>h</sub>×k<sub>w</sub>的卷积核张量，这样卷积核的形状是c<sub>o</sub>×c<sub>i</sub>×k<sub>h</sub>×k<sub>w</sub>。在互相关运算中，每个输出通道先获取所有输入通道，再以对应该输出通道的卷积核计算出结果。</p>
+<h4 id="2-3-5-汇聚层"><a href="#2-3-5-汇聚层" class="headerlink" title="2.3.5 汇聚层"></a>2.3.5 汇聚层</h4><p>与卷积层类似，汇聚层运算符由一个固定形状的窗口组成，该窗口根据其步幅大小在输入的所有区域上滑动，为固定形状窗口（有时称为汇聚窗口）遍历的每个位置计算一个输出。然而，不同于卷积层中的输入与卷积核之间的互相关计算，汇聚层不包含参数。相反，池运算是确定性的，我们通常计算汇聚窗口中所有元素的最大值或平均值。这些操作分别称为最大汇聚层（maximum pooling）和平均汇聚层（average pooling）。在这两种情况下，与互相关运算符一样，汇聚窗口从输入张量的左上角开始，从左往右、从上往下的在输入张量内滑动。在汇聚窗口到达的每个位置，它计算该窗口中输入⼦张量的最大值或平均值。计算最大值或平均值是取决于使有用了最大汇聚层还是平均汇聚层。</p>
+<h4 id="2-3-6-现代CNN类型"><a href="#2-3-6-现代CNN类型" class="headerlink" title="2.3.6 现代CNN类型"></a>2.3.6 现代CNN类型</h4><p>（1）深度卷积神经网络（AlexNet）：AlexNet由八层组成：五个卷积层、两个全连接隐藏层和一个全连接输出层。AlexNet使用ReLU而不是sigmoid作为其激活函数。</p>
+<p>​                                                                        <img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620001.jpg" alt="img"></p>
+<p>​                                                                                                AlexNet模型     </p>
+<p>​                                                              <img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620002.jpg" alt="img"></p>
+<p>​                                                                                                    VGG模型</p>
+<p>（2）使用块的网络（VGG）：VGG网络可以分为两部分：第一部分主要由卷积层和汇聚层组成，第二部分由全连接层组成。VGG网络有5个卷积块，其中前两个块各有一个卷积层，后三个块各包含两个卷积层。</p>
+<p>（3）网络中的网络（NiN）：NiN块以一个普通卷积层开始，后面是两个1×1的卷积层。这两个1×1卷积层充当带有ReLU激活函数的逐像素全连接层。第一层的卷积窗口形状通常由用户设置。随后的卷积窗口形状固定为1×1。</p>
+<p>NiN使用窗口形状为11×11、5×5和3×3的卷积层，输出通道数量与AlexNet中的相同。每个NiN块后有一个最大汇聚层，汇聚窗口形状为3×3，步幅为2。</p>
+<p>NiN和AlexNet之间的一个显著区别是NiN完全取消了全连接层。相反，NiN使用一个NiN块，其输出通道数等于标签类别的数量。最后放一个全局平均汇聚层（global average pooling layer），生成一个对数几率（logits）。NiN设计的一个优点是，它显著减少了模型所需参数的数量。然而，在实践中，这种设计有时会增加训练模型的时间。</p>
+<p>​                                                    <img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620003.jpg" alt="img"></p>
+<p>​                                                                                                    NiN模型</p>
+<p>​                                                                                    <img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620004.jpg" alt="img"></p>
+<p>​                                                                                                GoogLeNet模型</p>
+<p>（4）含并行连结的网络（GoogLeNet）：在GoogLeNet中，基本的卷积块被称为Inception块（Inception block）。Inception块由四条并行路径组成。前三条路径使用窗口大小为1×1、3×3和5×5的卷积层，从不同空间大小中提取信息。中间的两条路径在输入上执行1×1卷积，以减少通道数，从而降低模型的复杂性。第四条路径使用3×3最大汇聚层，然后使用1×1卷积层来改变通道数。这四条路径都使用合适的填充来使输入与输出的高和宽一致，最后我们将每条线路的输出在通道维度上连结，并构成Inception块的输出。在Inception块中，通常调整的超参数是每层输出通道数。</p>
+<p>GoogLeNet一共使用9个Inception块和全局平均汇聚层的堆叠来生成其估计值。Inception块之间的最大汇聚层可降低维度。第一个模块类似于AlexNet和LeNet，Inception块的组合从VGG继承，全局平均汇聚层避免了在最后使用全连接层。</p>
+<p>​                    <img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620005.jpg" alt="img"> </p>
+<p>​                                                                                                      Inception块的架构</p>
+<p>（5）残差网络（ResNet）：ResNet沿用了VGG完整的3×3卷积层设计。残差块里首先有2个有相同输出通道数的3×3卷积层。每个卷积层后接一个批量规范化层和ReLU激活函数。然后我们通过跨层数据通路，跳过这2个卷积运算，将输入直接加在最后的ReLU激活函数前。这样的设计要求2个卷积层的输出与输入形状一样，从而使它们可以相加。如果想改变通道数，就需要引入一个额外的1×1卷积层来将输入变换成需要的形状后再做相加运算。</p>
+<p>ResNet的前两层跟之前介绍的GoogLeNet中的一样：在输出通道数为64、步幅为2的7×7卷积层后，接步幅为2的3×3的最大汇聚层。不同之处在于ResNet每个卷积层后增加了批量规范化层。GoogLeNet在后面接了4个由Inception块组成的模块。ResNet则使用4个由残差块组成的模块，每个模块使用若干个同样输出通道数的残差块。第一个模块的通道数同输入通道数一致。由于之前已经使用了步幅为2的最大汇聚层，所以无须减小高和宽。之后的每个模块在第一个残差块里将上一个模块的通道数翻倍，并将高和宽减半。</p>
+<p>​                                                                        <img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620006.jpg" alt="img">                                                                      <img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620007.jpg" alt="img"></p>
+<p>​                                                                                                    残差块</p>
+<p>​                                                                            <img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620008.jpg" alt="img"></p>
+<p>​                                                                                            ResNet-18 模型 </p>
+<p>​                                                      <img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620009.jpg" alt="img"></p>
+<p>​                                                                                                    稠密连接  </p>
+<p>（6）稠密连接网络（DenseNet）：稠密网络主要由2部分构成：稠密块（dense block）和过渡层（transition layer）。前者定义如何连接输入和输出，而后者则控制通道数量，使其不会太复杂。ResNet与 DenseNet在跨层连接上的主要区别：使用相加和使用连结。</p>
+<p>一个稠密块由多个卷积块组成，每个卷积块使用相同数量的输出通道。然而，在前向传播中，我们将每个卷积块的输入和输出在通道维上连结。</p>
+<p>由于每个稠密块都会带来通道数的增加，使用过多则会过于复杂化模型。而过渡层可以用来控制模型复杂度。它通过1 × 1卷积层来减小通道数，并使用步幅为2的平均汇聚层减半高和宽，从而进一步降低模型复杂度。</p>
+<p>DenseNet首先使用同ResNet一样的单卷积层和最大汇聚层。接下来，类似于ResNet使用的4个残差块，DenseNet使用的是4个稠密块。与ResNet类似，我们可以设置每个稠密块使用多少个卷积层。接下来，类似于ResNet使用的4个残差块，DenseNet使用的是4个稠密块。与ResNet类似，我们可以设置每个稠密块使用多少个卷积层。与ResNet类似，最后接上全局汇聚层和全连接层来输出结果。</p>
+<h3 id="2-4-循环神经网络"><a href="#2-4-循环神经网络" class="headerlink" title="2.4 循环神经网络"></a>2.4 循环神经网络</h3><p>循环神经网络（recurrent neural network，RNN）通过引入状态变量存储过去的信息和当前的输入，从而可以确定当前的输出。所以循环神经网络可以更好地处理序列信息。</p>
+<h4 id="2-4-1-数学模型"><a href="#2-4-1-数学模型" class="headerlink" title="2.4.1 数学模型"></a>2.4.1 数学模型</h4><p>（1）无隐状态的神经网络</p>
+<p>设隐藏层的激活函数为ϕ，给定一个小批量样本X ∈ R<sup>n×d</sup>，其中批量大小为n，输入维度为d，则隐藏层的输出H ∈ R<sup>n×h</sup>通过下式计算：</p>
+<p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620010.png" alt="img"></p>
+<p>我们拥有的隐藏层权重参数为W <sub>xh</sub> ∈ R<sup>d×h</sup>，偏置参数为b<sub>h</sub> ∈ R<sup>1×h</sup>，以及隐藏单元的数目为h。因此求和时可以应用广播机制。接下来，将隐藏变量H用作输出层的输入。输出层由下式给出：</p>
+<p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620011.png" alt="img"></p>
+<p>其中，O ∈ R<sup>n×q</sup>是输出变量，W<sub>hq</sub> ∈ R<sup>h×q</sup>是权重参数，b<sub>q</sub> ∈ R<sup>1×q</sup>是输出层的偏置参数。</p>
+<p>（2）有隐状态的循环神经网络</p>
+<p>假设我们在时间步t有小批量输入X<sup>t</sup> ∈ R<sup>n×d</sup> 。换⾔之，对于n个序列样本的小批量，X<sup>t</sup>的每一行对应于来自该序列的时间步t处的一个样本。接下来，用H<sup>t</sup> ∈ R<sup>n×h </sup>表示时间步t的隐藏变量。与多层感知机不同的是，我们在这里保存了前一个时间步的隐藏变量H<sup>t-1</sup>，并引入了一个新的权重参数W<sub>hh</sub> ∈ R<sup>h×h</sup>，来描述如何在当前时间步中使用前一个时间步的隐藏变量。具体地说，当前时间步隐藏变量由当前时间步的输入与前一个时间步的隐藏变量一起计算得出： </p>
+<p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620012.png" alt="img"></p>
+<p>对于时间步t，输出层的输出类似于多层感知机中的计算：</p>
+<p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620013.png" alt="img"></p>
+<p>其中循环神经网络的参数包括隐藏层的权重 W<sup>xh</sup> ∈ R<sup>d×h</sup>, W<sub>hh</sub> ∈ R<sup>h×h </sup>和偏置b<sup>h</sup> ∈ R<sup>1×h</sup>，以及输出层的权重W<sub>hq</sub> ∈ R<sup>h×q</sup> 和偏置b<sub>q</sub> ∈ R<sup>1×q</sup>。</p>
+<h4 id="2-4-2-原理图"><a href="#2-4-2-原理图" class="headerlink" title="2.4.2 原理图"></a>2.4.2 原理图</h4><p>​                    <img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620015.jpg" alt="img"> </p>
+<p>​                                                                                        具有隐状态的循环神经网络</p>
+<h4 id="2-4-3-训练和预测"><a href="#2-4-3-训练和预测" class="headerlink" title="2.4.3 训练和预测"></a>2.4.3 训练和预测</h4><p>训练：</p>
+<p>①序列数据的不同采样方法（随机采样和顺序分区）将导致隐状态初始化的差异。</p>
+<p>②我们在更新模型参数之前裁剪梯度。这样的操作的目的是：即使训练过程中某个点上发生了梯度爆炸，也能保证模型不会发散。</p>
+<p>③我们用困惑度来评价模型。</p>
+<p>预测：</p>
+<p>①预热（warm-up）期：⾸先定义预测函数来生成prefix之后的新字符，其中的prefix是一个用户提供的包含多个字符的字符串。在循环遍历prefix中的开始字符时，我们不断地将隐状态传递到下一个时间步，但是不生成任何输出。</p>
+<p>②在此期间模型会自我更新（例如，更新隐状态），但不会进行预测。预热期结束后，隐状态的值通常比刚开始的初始值更适合预测，从而预测字符并输出它们。</p>
+<h4 id="2-4-4-现代RNN"><a href="#2-4-4-现代RNN" class="headerlink" title="2.4.4 现代RNN"></a>2.4.4 现代RNN</h4><p>（1）门控循环单元（GRU）：</p>
+<p>门控循环单元与普通的循环神经网络之间的关键区别在于：前者支持隐状态的门控。这意味着模型有专门的机制来确定应该何时更新隐状态，以及应该何时重置隐状态。例如，如果第一个词元非常重要，模型将学会在第一次观测之后不更新隐状态。同样，模型也可以学会跳过不相关的临时观测。最后，模型还将学会在需要的时候重置隐状态。</p>
+<p>​                <img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620016.jpg" alt="img"> </p>
+<p>​                                                                        计算门控循环单元模型中的隐状态</p>
+<p>（2） 长短期记忆网络（LSTM）：</p>
+<p>长短期记忆网络的设计灵感来自于计算机的逻辑门。长短期记忆网络引入了记忆元（memory cell），或简称为单元（cell）为了控制记忆元，我们需要许多门。其中一个门用来从单元中输出条目，我们将其称为输出门（output gate）。另外一个门用来决定何时将数据读入单元，我们将其称为输入门（input gate）。我们还需要一种机制来重置单元的内容，由遗忘门（forget gate）来管理，这种设计的动机与门控循环单元相同，能够通过专用机制决定什么时候记忆或忽略隐状态中的输入。</p>
+<p>​                <img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620017.jpg" alt="img"> </p>
+<p>​                                                                                 在长短期记忆网络模型中计算记忆元</p>
+<p>（3） 深度循环神经网络：</p>
+<p>深度循环神经网络可以将多层循环神经网络堆叠在一起，通过对几个简单层的组合，产生了一个灵活的机制。特别是，数据可能与不同层的堆叠有关。在深度循环神经网络中，隐状态的信息被传递到当前层的下一时间步和下一层的当前时间步。深度循环神经网络需要大量的调参（如学习率和修剪）来确保合适的收敛，模型的初始化也需要谨慎。</p>
+<p>​                                                                      <img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620018.jpg" alt="img"></p>
+<p>​                                                                                                深度循环神经网络结构  </p>
+<pre><code>                                                                 ![img](https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620019.jpg)
+</code></pre><p>​                                                                                        双向循环神经网络架构</p>
+<p>（5） 双向循环神经网络：</p>
+<p>双向循环神经网络（bidirectional RNNs）添加了反向传递信息的隐藏层，以便更灵活地处理此类信息。（图21）描述了具有单个隐藏层的双向循环神经网络的架构。双向循环神经网络的一个关键特性是：使用来自序列两端的信息来估计输出。也就是说，我们使用来自过去和未来的观测信息来预测当前的观测。</p>
+<p>存在的缺点：</p>
+<p>①在训练期间，我们能够利用过去和未来的数据来估计现在空缺的词；而在测试期间，我们只有过去的数据，因此精度将会很差。</p>
+<p>②双向循环神经网络的计算速度非常慢。其主要原因是网络的前向传播需要在双向层中进行前向和后向递归，并且网络的反向传播还依赖于前向传播的结果。因此，梯度求解将有一个非常长的链。</p>
+<p>（6） 编码器-解码器架构：</p>
+<p>机器翻译是序列转换模型的一个核⼼问题，其输入和输出都是长度可变的序列。为了处理这种类型的输入和输出，我们可以设计一个包含两个主要组件的架构：第一个组件是一个编码器（encoder）：它接受一个长度可变的序列作为输入，并将其转换为具有固定形状的编码状态。第二个组件是解码器（decoder）：它将固定形状的编码状态映射到长度可变的序列。这被称为编码器-解码器（encoder-decoder）架构。</p>
+<p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620020.jpg" alt="img"> </p>
+<p>​                                                                                            编码器-解码器架构</p>
+<p>（7） 序列到序列学习（seq2seq）：</p>
+<p>序列到序列学习将使用两个循环神经网络的编码器和解码器，输入序列的信息被编码到循环神经网络编码器的隐状态中。为了连续生成输出序列的词元，独立的循环神经网络解码器是基于输入序列的编码信息和输出序列已经看见的或者生成的词元来预测下一个词元。</p>
+<p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620021.jpg" alt="img"> </p>
+<p>​                                                    使用循环神经网络编码器和循环神经网络解码器的序列到序列学习</p>
+<h3 id="2-5-优化算法"><a href="#2-5-优化算法" class="headerlink" title="2.5 优化算法"></a>2.5 优化算法</h3><p>对于深度学习问题， 我们通常会先定义损失函数。一旦我们有了损失函数，我们就可以使用优化算法来尝试最小化损失。在优化中，损失函数通常被称为优化问题的目标函数。</p>
+<p>（1）梯度下降（批量梯度下降）：对样本集中所有样本计算梯度后求平均，更新参数。</p>
+<p>（2）随机梯度下降：从样本集中随机选取一个样本计算梯度,更新参数。</p>
+<p>（3）小批量随机梯度下降：从样本集中随机选取多个样本计算梯度求平均,更新参数。</p>
+<p>（4）动量法：是传统梯度下降法（SGD）的一种扩展，它比SGD更高效。动量法又被称作基于动量的梯度下降法（SGD with momentum），是一种使梯度向量向相关方向加速变化、最终实现加速收敛的方法。</p>
+<p>（5）AdaGrad算法：利用梯度的大小作为调整进度速率的手段：用较小的学习率来补偿带有较大梯度的坐标。</p>
+<p>AdaGrad算法的优点：首先，我们不再需要决定梯度何时算足够大。其次，它会随梯度的大小自动变化。通常对应于较大梯度的坐标会显著缩小，而其他梯度较小的坐标则会得到更平滑的处理。</p>
+<p>AdaGrad算法的缺点：AdaGrad算法有时在降低学习率方面可能过于剧烈。</p>
+<p>（6）RMSProp算法：RMSProp算法与AdaGrad算法非常相似，因为两者都使用梯度的平方来缩放系数。RMSProp算法与动量法都使用泄漏平均值。但是，RMSProp算法使用该技术来调整按系数顺序的预处理器。</p>
+<p>（7）Adadelta算法：Adadelta是AdaGrad、RMSProp的另一种变体，使用参数的变化量来代替学习率，因此广义上认为Adadelta没有学习率。</p>
+<p>（8）Adam算法：使用指数加权移动平均值来估算梯度的动量（momentum）和二阶矩（moment），在此基础上更新网络参数。</p>
+<p>（9）学习率调度器：单因子调度器、多因子调度器、余弦调度器、预热。</p>
+<h3 id="2-6-自定义网络实现"><a href="#2-6-自定义网络实现" class="headerlink" title="2.6 自定义网络实现"></a>2.6 自定义网络实现</h3><p>实现自定义块需要提供以下基本功能：</p>
+<ol>
+<li>将输入数据作为其前向传播函数的参数。</li>
+<li>通过前向传播函数来生成输出。请注意，输出的形状可能与输入的形状不同。</li>
+<li>计算其输出关于输入的梯度，可通过其反向传播函数进行访问。通常这是自动发生的。</li>
+<li>存储和访问前向传播计算所需的参数。</li>
+<li>根据需要初始化模型参数。</li>
+</ol>
+<h2 id="3-深度学习应用"><a href="#3-深度学习应用" class="headerlink" title="3 深度学习应用"></a>3 深度学习应用</h2><h4 id="3-1-单发多框目标检测"><a href="#3-1-单发多框目标检测" class="headerlink" title="3.1 单发多框目标检测"></a>3.1 单发多框目标检测</h4><p>模型由一个基础网络块和多个多尺度特征块组成。每个特征块将上一层特征图的高和宽缩小（如减半），因而相同大小的锚框层数越深在原始输入图像上的感受野越大（可检测的对象越大）。每个块生成一定数量的锚框，并通过类别预测层和边界框预测层预测其类别和偏移量来检测大小不同的目标。</p>
+<p>​                    <img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620022.jpg" alt="img"> </p>
+<p>​                            单发多框检测模型主要由一个基础网络块和若干多尺度特征块串联而成</p>
+<h4 id="3-1-1类别预测层"><a href="#3-1-1类别预测层" class="headerlink" title="3.1.1类别预测层"></a>3.1.1类别预测层</h4><p>设目标类别的数量为q。这样一来，锚框有q+1个类别，其中0类是背景。在某个尺度下，设特征图的高和宽分别为h和w。如果以其中每个像素为中心生成a个锚框，那么我们需要对hwa个锚框进行分类。</p>
+<p>类别预测层是一个填充为1，卷积核为3×3，输出通道数为a（q+1）的卷积层，可使输入和输出的宽度和高度保持不变，第i（q+1）+j（0≤j≤q）个输出通道中的第x行y列元素值代表了输入中第x行y列像素值生成的第i个锚框的类别索引为j时的预测值。</p>
+<h4 id="3-1-2边界框预测层"><a href="#3-1-2边界框预测层" class="headerlink" title="3.1.2边界框预测层"></a>3.1.2边界框预测层</h4><p>边界框预测层的设计与类别预测层类似。不同的是，需要为每个锚框预测4个偏移量，而不是q+1个类别。</p>
+<p>​                      <img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620023.jpg" alt="img"></p>
+<p>​                                                                    边界框预测层输入输出大小示意图</p>
+<h4 id="3-1-3连结多尺度的预测"><a href="#3-1-3连结多尺度的预测" class="headerlink" title="3.1.3连结多尺度的预测"></a>3.1.3连结多尺度的预测</h4><p>在不同的尺度下，特征图的形状或以同一单元为中心的锚框的数量可能会有所不同。因此，不同块的预测输出的形状可能会有所不同。</p>
+<p>为了提高计算效率，我们将模型每个块的预测结果转成二维的（批量大小，高×宽×通道数）的格式，再在维度1上连结。</p>
+<h4 id="3-1-4高和宽减半块"><a href="#3-1-4高和宽减半块" class="headerlink" title="3.1.4高和宽减半块"></a>3.1.4高和宽减半块</h4><p>为了在多个尺度下检测目标，模型中多数特征块采用高和宽减半块，即多数特征块将来自上一模块的输入特征图的高度和宽度减半。更具体地说，每个高和宽减半块由两个填充为1的3×3的卷积层、以及步幅为2的2×2最大汇聚层组成。</p>
+<h4 id="3-1-5基本网络块"><a href="#3-1-5基本网络块" class="headerlink" title="3.1.5基本网络块"></a>3.1.5基本网络块</h4><p>基本网络块用于从输入图像中抽取特征。为了计算简洁，模型采用了一个小的基础网络，该网络串联3个高和宽减半块，并逐步将通道数翻倍。</p>
+<h4 id="3-1-6完整的模型"><a href="#3-1-6完整的模型" class="headerlink" title="3.1.6完整的模型"></a>3.1.6完整的模型</h4><p>完整的单发多框检测模型由五个模块组成。每个块生成的特征图既用于生成锚框，又用于预测这些锚框的类别和偏移量。在这五个模块中，第一个是基本网络块，第二个到第四个是高和宽减半块，最后一个模块使用全局最大池化将高度和宽度都降到1。</p>
+<h3 id="3-2-语义分割"><a href="#3-2-语义分割" class="headerlink" title="3.2 语义分割"></a>3.2 语义分割</h3><h4 id="3-2-1语义分割基本原理"><a href="#3-2-1语义分割基本原理" class="headerlink" title="3.2.1语义分割基本原理"></a>3.2.1语义分割基本原理</h4><p>（1）语义分割：识别并理解图像中每一个像素的内容（对图像每一像素分类），其语义区域的标注和预测是像素级的。与目标检测相比，语义分割标注的像素级的边框显然更加精细。</p>
+<p>​                    <img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620024.jpg" alt="img"> </p>
+<p>​                                                                语义分割中图像有关狗、猫和背景的标签</p>
+<p>（2）模型：采用全卷积网络构建模型，引入1×1卷积层将输出通道数调整为待分割图像一个像素的可能类别总数，引入转置卷积层将输出图像尺寸调整得和输入图像尺寸一样。</p>
+<h4 id="3-2-2图像分割和实例分割（语义分割介于二者之间）"><a href="#3-2-2图像分割和实例分割（语义分割介于二者之间）" class="headerlink" title="3.2.2图像分割和实例分割（语义分割介于二者之间）"></a>3.2.2图像分割和实例分割（语义分割介于二者之间）</h4><p>图像分割将图像划分为若干组成区域,这类问题的方法通常利用图像中像素之间的相关性。它在训练时不需要有关困像像素的标签信息，在预测时也无法保证分割出的区域具有我们希望得到的语义。例如猫狗图像，图像分割可能会将猫狗分为两个区域：一个覆盖以黑色为主的嘴和眼睛，另一个覆盖以黄色为主的其余部分身体。</p>
+<p>实例分割也叫同时检测并分割，它研究如何识别图像中各个目标实例的像素级区域。与语义分割不同,实例分割不仅需要区分语义，还要区分不同的目标实例。例如，如果图像中有两条狗，则实例分割需要区分像素属于的两条狗中的哪一条。</p>
+<h4 id="3-2-3转置卷积"><a href="#3-2-3转置卷积" class="headerlink" title="3.2.3转置卷积"></a>3.2.3转置卷积</h4><p>（1）下采样和上采用</p>
+<p>下采样：即缩小图像，常用的方法主要有：卷积、池化。第六章我们学习的卷积层和汇聚（池化）层,通常会减少输入图像的空间维度（高和宽)。</p>
+<p>上采样：即放大图像，常用的方法主要有：转置卷积、上池化（Unpooling） 。</p>
+<p>在语义分割中，我们需要对输入图像的每一像素分类。但下采样会使得输出图像和输入图像的空间维度不一致，所以我们在使用完下采样后还得再使用上采样使得输出图像和输入图像的空间维度相同，进而通过输出像素的类别直接判定输入像素的类别。</p>
+<p>（2）基本操作</p>
+<p>   暂时忽略通道，从基本的转置卷积开始：假设我们有一个nh×nw的输入张量和一个kh×kw的卷积核。没有填充、以步幅为1滑动卷积核窗口，每行nw次，每列nh次，共产生nhnw个中间结果。每个中间结果都是一个（nh+kh-1）×（nw+kw-1）的张量。每个输入元素和卷积核相乘，所得结果根据输入元素的位置*指定步幅滑动。</p>
+<p>​        <img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620025.jpg" alt="img"> </p>
+<p>​    2×2的输入张量计算卷积核为2×2的转置卷积。阴影部分是中间张量的一部分，也是用于计算的输入和卷积核张量元素。</p>
+<p>（3）填充、步幅和多通道</p>
+<p>在转置卷积中，填充被应用于输出，将减少输出的高和宽（常规卷积的填充应用于输入，将增加输入的高和宽）。例如，当转置卷积将高和宽两侧的填充数指定为1时，将删除输出的第一和最后的行与列。在转置卷积中，步幅被应用于输出，而不是输入。每个输入元素和卷积核相乘，所得结果根据输入元素的位置×指定步幅滑动。</p>
+<p>​                    <img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620026.jpg" alt="img"> </p>
+<p>​                                                                            卷积核为2 × 2，步幅为2的转置卷积</p>
+<p>（4）为什么叫转置卷积?</p>
+<p>抽象来看，给定输入向量x和权重矩阵W，常规卷积的前向传播函数可以通过将其输入与权重矩阵相乘并输出向量y=Wx来实现，其反向传播函数可以通过将其输入与权重矩阵的转置WT相乘来实现。</p>
+<p>转置卷积则和常规卷积相反，它的正向传播和反向传播函数将输入向量分别与W和W相乘。</p>
+<h4 id="3-2-4全卷积网络"><a href="#3-2-4全卷积网络" class="headerlink" title="3.2.4全卷积网络"></a>3.2.4全卷积网络</h4><p>语义分割是对图像中的每个像素分类。全卷积网络采用卷积神经网络实现了从图像像素到像素类别的变换。与我们之前在图像分类或目标检测部分介绍的卷积神经网络不同，全卷积网络引入的转置卷积将中间层特征图的高和宽变换回输入图像的尺寸。因此，输出的类别预测与输入图像在像素级别上具有一一对应关系：通道维的输出即该位置对应像素的类别预测。</p>
+<p>模型结构：首先，使用在ImageNet数据集上训练好的ResNet-18模型前16层作为卷积神经网络提取图像特征。接下来，使用1×1卷积层将输出通道数转换为Pascal VOC2012数据集的类数（21类，即每个像素有21种索引类别）。最后，通过转置卷积将特征图的高度和宽度增加32倍,将其变回输入图像的高和宽。</p>
+<p>​                                                                                    <img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620027.jpg" alt="img"> </p>
+<p>​                                                                                                全卷积网络结构</p>
+<h3 id="3-3-风格迁移"><a href="#3-3-风格迁移" class="headerlink" title="3.3 风格迁移"></a>3.3 风格迁移</h3><p>（1）风格迁移：是指使用卷积神经网络，自动将一个图像（风格图像）的风格应用到另一图像（内容图像）之上得到合成图像。</p>
+<p>​            <img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620028.jpg" alt="img"> </p>
+<p>​                                                    输入内容图像和风格图像，输出风格迁移后的合成图像</p>
+<p>（2）方法</p>
+<p>①首先，初始化合成图像为内容图像。</p>
+<p>②然后，选择一个预训练好的卷积神经网络net（其网络参数在训练中无需更新），抽取内容图像和风格图像在net的某些层输出作为内容特征或风格特征标签。</p>
+<p>③在此基础上，通过前向传播（实线箭头方向）抽取合成图像的风格层、内容层和输出层输出，计算三者损失，并通过反向传播（虚线箭头方向）更新合成图像（这个才是我们训练更新的目标）。</p>
+<p>（3）风格迁移常用的损失函数由3部分组成：</p>
+<p>①内容损失使合成图像与内容图像在内容特征上接近。</p>
+<p>②风格损失使合成图像与风格图像在风格特征上接近。</p>
+<p>③全变分损失则有助于减少合成图像中的噪点。</p>
+<p>​                    <img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620029.jpg" alt="img"> </p>
+<p>​                                            基于卷积神经网络的风格迁移。实线箭头和虚线箭头分别表示前向传播和反向传播</p>
+<h3 id="3-4-中英文翻译系统"><a href="#3-4-中英文翻译系统" class="headerlink" title="3.4 中英文翻译系统"></a>3.4 中英文翻译系统</h3><p>机器翻译（machine translation）指的是将序列从一种语言自动翻译成另一种语言，属于序列到序列学习问题。目前有两类机器翻译方法：①统计机器翻译：统计学方法②神经机器翻译：神经网络的方法。</p>
+<p>本中英文翻译系统基于序列到序列学习（seq2seq）的循环神经网络，下面是具体设计：</p>
+<p>（1）预处理数据集</p>
+<p>数据集中的每一行都是制表符分隔的文本序列对，序列对由英文文本序列和翻译后的法语文本序列组成（中文是源语言，英语是目标语言）。每个文本序列可以是一个句子，也可以是包含多个句子的一个段落。用空格代替不间断空格，使用小写字母替换大写字母，并在单词和标点符号之间插入空格。</p>
+<p>（2）词元化</p>
+<p>单词级词元化：利用空格切分。其中每个词元要么是一个词，要么是一个标点符号。</p>
+<p>（3）词表化</p>
+<p>分别为源语言和目标语言构建两个词表。为了防止词表过大，将出现次数少于2次的低频率词元视为相同的未知“<unk>”词元。此外，还指定了额外的特定词元，例如在小批量时用于将序列填充到相同长度的填充词元“<pad>”,以及序列开始词元“<bos>”和结束词元“<eos>”。</p>
+<p>（4）转化成适于循环神经网络处理的数据集</p>
+<p>①采用截断和填充定义序列长度统一化函数。注意：此处的长度统一化是指将源语言序列和目标语言序列长度分别统一化，并不是说要求两类序列长度也要相同。</p>
+<p>②定义将序列转换成张量函数。将特定的“<eos>”词元添加到所有序列的末尾，用于表示序列的结束。还记录了每个文本序列的长度，统计长度时排除了填充词元。</p>
+<p>（5）训练</p>
+<p>强制教学：用特定的序列开始词元（“<bos>”）和原始的输出序列（不包括序列结束词元“<eos>”）拼接在一起作为解码器的输入。</p>
+<p>（6）预测</p>
+<p>每个解码器当前时间步的输入来自于前一时间步的预测词元。与训练类似，序列开始词元（“<bos>”）在初始时间步被输入到解码器中。</p>
+<p>（7）预测序列的评估</p>
+<p>BLEU（bilingual evaluation understudy）：通过测量预测序列和标签序列之间的n元语法的匹配度来评估预测性能。</p>
+<p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620030.png" alt="img"></p>
+<p>·lenlabel：标签序列长度（单词数）</p>
+<p>·lenpred：预测序列长度（单词数）</p>
+<p>·Pn  = <img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620031.png" alt="img"></p>
+<p>·k是用于匹配的最长的n元语法</p>
+<p>当预测序列与标签序列完全相同时，BLEU为1，即BLEU值越大预测性能越好。</p>
+<p>​                                    <img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620032.jpg" alt="img"></p>
+<p>​                                                                循环神经网络编码器-解码器模型中的层</p>
+<p>​                    <img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202312131620033.jpg" alt="img"> </p>
+<p>​                                                    使用循环神经网络编码器-解码器逐词元地预测输出序列</p>
+<h2 id="4-结束语"><a href="#4-结束语" class="headerlink" title="4 结束语"></a>4 结束语</h2><p>经过一个学期的学习，我获益匪浅。老师从零基础带着我们手把手搭建深度学习环境，讲解每个网络的Python代码实现，由浅入深，讲解详细。老师还及时更正书本的错误或者书本写的不易理解的地方用更通俗的讲解。从Python基础知识，深度学习基础知识到多层感知机，卷积神经网络，循环神经网络，优化算法再到计算机视觉，让我对深度学习有了一个入门的理解。尤其是优化算法和计算机视觉这两章，因为之前也了解过一点深度学习，也打过一些比赛，在改进网络的时候通常是手动调参，网上百度找一些调参方法，没有系统的学习过理论知识，经过老师的讲解让我对优化算法和计算机视觉有了更系统的理解。希望课程能增加一些与所学知识相关的比赛练习，我觉得这样更能调动同学们的兴趣和增强动手能力。最后感谢老师的课程使我获益匪浅，感谢老师辛苦的备课。</p>
+<h2 id="5-参考文献"><a href="#5-参考文献" class="headerlink" title="5 参考文献"></a>5 参考文献</h2><p>[1]  Aston Zhang, Zachary C. Lipton, Mu Li, and Alexander J. Smola编著.《动⼿学深度学习》人们邮电出版社Jul 31, 2022年</p>
+<p>[2] 孙志军, 薛磊, 许阳明, 王正. 深度学习研究综述[J]. 计算机应用研究, 2012, 29(08)：2806-2810.</p>
+<p>[3] 周飞燕, 金林鹏, 董军. 卷积神经网络研究综述[J]. 计算机学报, 2017, 40(06)：1229-1251.</p>
+<p>[4] 尹宝才, 王文通, 王立春. 深度学习研究综述[J]. 北京工业大学学报, 2015, 41(01)：48-59.</p>
+<p>[5] 刘建伟, 刘媛, 罗雄麟. 深度学习研究进展[J]. 计算机应用研究,2014, 31(07)：1921-1930+1942.</p>
+<p>[6] 郭丽丽, 丁世飞. 深度学习研究进展[J]. 计算机科学, 2015, 42(05)：28-33.</p>
+<p>[7] 田萱, 王亮, 丁琪. 基于深度学习的图像语义分割方法综述[J]. 软件学报, 2019, 30(02)：440-468.</p>
+<p>[8] 胡越, 罗东阳, 花奎, 路海明, 张学工. 关于深度学习的综述与讨论[J]. 智能系统学报, 2019, 14(01)：1-19.</p>
+<p>[9] 张润, 王永滨. 机器学习及其算法和发展研究[J]. 中国传媒大学学报(自然科学版), 2016, 23(02)：10-18+24.</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://huaiyuechusan.gitee.io">槐月初叁</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://huaiyuechusan.gitee.io/archives/17a30d1a.html">https://huaiyuechusan.gitee.io/archives/17a30d1a.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://huaiyuechusan.gitee.io" target="_blank">槐月初叁的个人博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%9C%AF/">学习技术</a><a class="post-meta__tags" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a></div><div class="post_share"><div class="social-share" data-image="https://gitee.com/huaiyuechusan/backgroud-image/raw/master/image/New Year-2023-11-2221:47:25.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/archives/95c4b274.html"><img class="next-cover" src="/./img/config_img/%E9%98%B3%E5%85%89%E5%B0%8F%E7%8C%AB.jpg" onerror="onerror=null;src='/./img/config_img/%E5%A4%9C%E6%99%9A.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">保研经验贴</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/archives/6d169344.html" title="云函数调用request请求"><img class="cover" src="https://gitee.com/huaiyuechusan/backgroud-image/raw/master/image/202310310007873-2023-11-1123:30:51.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-11-12</div><div class="title">云函数调用request请求</div></div></a></div><div><a href="/archives/59cb3162.html" title="大数据集群软件启动脚本"><img class="cover" src="https://gitee.com/huaiyuechusan/backgroud-image/raw/master/image/image-20231112203357129-2023-11-1220:34:09.png" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-12-12</div><div class="title">大数据集群软件启动脚本</div></div></a></div><div><a href="/archives/7cb9f0a8.html" title="通过nginx访问tomcat中SpringMVC应用"><img class="cover" src="https://gitee.com/huaiyuechusan/backgroud-image/raw/master/image/Girl-2023-11-2221:46:26.png" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-11-22</div><div class="title">通过nginx访问tomcat中SpringMVC应用</div></div></a></div><div><a href="/archives/d9ef328.html" title="Python入门"><img class="cover" src="https://gitee.com/huaiyuechusan/backgroud-image/raw/master/image/image-20231112203059300-2023-11-1220:31:16.png" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-11-20</div><div class="title">Python入门</div></div></a></div><div><a href="/archives/8df5f8b9.html" title="Python深入和提高"><img class="cover" src="https://gitee.com/huaiyuechusan/backgroud-image/raw/master/image/Girl3-2023-11-2221:47:04.png" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-12-12</div><div class="title">Python深入和提高</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="lv-container" data-id="city" data-uid="MTAyMC81OTEzMS8zNTU5Mw=="></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/./img/config_img/%E9%98%B3%E5%85%89%E5%B0%8F%E7%8C%AB.jpg" onerror="this.onerror=null;this.src='/./img/config_img/%E8%93%9D%E5%A4%A9.jpg'" alt="avatar"/></div><div class="author-info__name">槐月初叁</div><div class="author-info__description">今天不学习，明天变垃圾</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/huaiyuechusan"><i class="fa-sharp fa-solid fa-plane"></i><span>欢迎关注我的Github</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/huaiyuechusan" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1971601012@qq.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到槐月初叁的博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%90%86%E8%AE%BA%E4%B8%8E%E5%BA%94%E7%94%A8"><span class="toc-text">深度学习理论与应用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%BC%95%E8%A8%80"><span class="toc-text">1 引言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1%E8%B5%B7%E6%BA%90"><span class="toc-text">1.1起源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2%E4%BC%98%E7%82%B9"><span class="toc-text">1.2优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3%E5%BA%94%E7%94%A8%E9%A2%86%E5%9F%9F"><span class="toc-text">1.3应用领域</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80"><span class="toc-text">2    深度学习基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="toc-text">2.1 线性回归</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-1-%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B"><span class="toc-text">2.1.1 数学模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-3-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-text">2.1.3 损失函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-5-%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-text">2.1.5 优缺点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E5%A4%9A%E5%B1%82%E6%84%9F%E7%9F%A5%E6%9C%BA"><span class="toc-text">2.2 多层感知机</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-1-%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B"><span class="toc-text">2.2.1 数学模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-2-%E5%8E%9F%E7%90%86%E5%9B%BE"><span class="toc-text">2.2.2 原理图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-3-%E9%9A%90%E8%97%8F%E5%B1%82"><span class="toc-text">2.2.3 隐藏层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-4-%E8%AE%AD%E7%BB%83%E5%92%8C%E9%A2%84%E6%B5%8B"><span class="toc-text">2.2.4 训练和预测</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-5%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9%EF%BC%9A"><span class="toc-text">2.2.5模型选择：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-6%E6%AC%A0%E6%8B%9F%E5%90%88%E5%92%8C%E8%BF%87%E6%8B%9F%E5%90%88"><span class="toc-text">2.2.6欠拟合和过拟合</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-7%E6%95%B0%E5%80%BC%E7%A8%B3%E5%AE%9A%E6%80%A7%EF%BC%9A"><span class="toc-text">2.2.7数值稳定性：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-8%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-text">2.2.8优缺点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="toc-text">2.3 卷积神经网络</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-1-%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B"><span class="toc-text">2.3.1 数学模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-2-%E5%8E%9F%E7%90%86%E5%9B%BE%EF%BC%88LeNet-5%EF%BC%89"><span class="toc-text">2.3.2 原理图（LeNet-5）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-3-%E5%A1%AB%E5%85%85%E5%92%8C%E6%AD%A5%E5%B9%85"><span class="toc-text">2.3.3 填充和步幅</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-4%E5%A4%9A%E8%BE%93%E5%85%A5%E5%A4%9A%E8%BE%93%E5%87%BA%E9%80%9A%E9%81%93"><span class="toc-text">2.3.4多输入多输出通道</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-5-%E6%B1%87%E8%81%9A%E5%B1%82"><span class="toc-text">2.3.5 汇聚层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-6-%E7%8E%B0%E4%BB%A3CNN%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.3.6 现代CNN类型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="toc-text">2.4 循环神经网络</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-1-%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B"><span class="toc-text">2.4.1 数学模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-2-%E5%8E%9F%E7%90%86%E5%9B%BE"><span class="toc-text">2.4.2 原理图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-3-%E8%AE%AD%E7%BB%83%E5%92%8C%E9%A2%84%E6%B5%8B"><span class="toc-text">2.4.3 训练和预测</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-4-%E7%8E%B0%E4%BB%A3RNN"><span class="toc-text">2.4.4 现代RNN</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95"><span class="toc-text">2.5 优化算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BD%91%E7%BB%9C%E5%AE%9E%E7%8E%B0"><span class="toc-text">2.6 自定义网络实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%BA%94%E7%94%A8"><span class="toc-text">3 深度学习应用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E5%8D%95%E5%8F%91%E5%A4%9A%E6%A1%86%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B"><span class="toc-text">3.1 单发多框目标检测</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-1%E7%B1%BB%E5%88%AB%E9%A2%84%E6%B5%8B%E5%B1%82"><span class="toc-text">3.1.1类别预测层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-2%E8%BE%B9%E7%95%8C%E6%A1%86%E9%A2%84%E6%B5%8B%E5%B1%82"><span class="toc-text">3.1.2边界框预测层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-3%E8%BF%9E%E7%BB%93%E5%A4%9A%E5%B0%BA%E5%BA%A6%E7%9A%84%E9%A2%84%E6%B5%8B"><span class="toc-text">3.1.3连结多尺度的预测</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-4%E9%AB%98%E5%92%8C%E5%AE%BD%E5%87%8F%E5%8D%8A%E5%9D%97"><span class="toc-text">3.1.4高和宽减半块</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-5%E5%9F%BA%E6%9C%AC%E7%BD%91%E7%BB%9C%E5%9D%97"><span class="toc-text">3.1.5基本网络块</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-6%E5%AE%8C%E6%95%B4%E7%9A%84%E6%A8%A1%E5%9E%8B"><span class="toc-text">3.1.6完整的模型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2"><span class="toc-text">3.2 语义分割</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-1%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="toc-text">3.2.1语义分割基本原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-2%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2%E5%92%8C%E5%AE%9E%E4%BE%8B%E5%88%86%E5%89%B2%EF%BC%88%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E4%BB%8B%E4%BA%8E%E4%BA%8C%E8%80%85%E4%B9%8B%E9%97%B4%EF%BC%89"><span class="toc-text">3.2.2图像分割和实例分割（语义分割介于二者之间）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-3%E8%BD%AC%E7%BD%AE%E5%8D%B7%E7%A7%AF"><span class="toc-text">3.2.3转置卷积</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-4%E5%85%A8%E5%8D%B7%E7%A7%AF%E7%BD%91%E7%BB%9C"><span class="toc-text">3.2.4全卷积网络</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E9%A3%8E%E6%A0%BC%E8%BF%81%E7%A7%BB"><span class="toc-text">3.3 风格迁移</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E4%B8%AD%E8%8B%B1%E6%96%87%E7%BF%BB%E8%AF%91%E7%B3%BB%E7%BB%9F"><span class="toc-text">3.4 中英文翻译系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="toc-text">4 结束语</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="toc-text">5 参考文献</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/archives/17a30d1a.html" title="《动手学深度学习》学习笔记"><img src="https://gitee.com/huaiyuechusan/backgroud-image/raw/master/image/New Year-2023-11-2221:47:25.png" onerror="this.onerror=null;this.src='/./img/config_img/%E5%A4%9C%E6%99%9A.jpg'" alt="《动手学深度学习》学习笔记"/></a><div class="content"><a class="title" href="/archives/17a30d1a.html" title="《动手学深度学习》学习笔记">《动手学深度学习》学习笔记</a><time datetime="2023-12-13T08:26:49.776Z" title="更新于 2023-12-13 16:26:49">2023-12-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/59cb3162.html" title="大数据集群软件启动脚本"><img src="https://gitee.com/huaiyuechusan/backgroud-image/raw/master/image/image-20231112203357129-2023-11-1220:34:09.png" onerror="this.onerror=null;this.src='/./img/config_img/%E5%A4%9C%E6%99%9A.jpg'" alt="大数据集群软件启动脚本"/></a><div class="content"><a class="title" href="/archives/59cb3162.html" title="大数据集群软件启动脚本">大数据集群软件启动脚本</a><time datetime="2023-12-12T14:00:02.269Z" title="更新于 2023-12-12 22:00:02">2023-12-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/8df5f8b9.html" title="Python深入和提高"><img src="https://gitee.com/huaiyuechusan/backgroud-image/raw/master/image/Girl3-2023-11-2221:47:04.png" onerror="this.onerror=null;this.src='/./img/config_img/%E5%A4%9C%E6%99%9A.jpg'" alt="Python深入和提高"/></a><div class="content"><a class="title" href="/archives/8df5f8b9.html" title="Python深入和提高">Python深入和提高</a><time datetime="2023-12-12T13:49:16.816Z" title="更新于 2023-12-12 21:49:16">2023-12-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/95c4b274.html" title="保研经验贴"><img src="/./img/config_img/%E9%98%B3%E5%85%89%E5%B0%8F%E7%8C%AB.jpg" onerror="this.onerror=null;this.src='/./img/config_img/%E5%A4%9C%E6%99%9A.jpg'" alt="保研经验贴"/></a><div class="content"><a class="title" href="/archives/95c4b274.html" title="保研经验贴">保研经验贴</a><time datetime="2023-12-12T13:47:00.289Z" title="更新于 2023-12-12 21:47:00">2023-12-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/7cb9f0a8.html" title="通过nginx访问tomcat中SpringMVC应用"><img src="https://gitee.com/huaiyuechusan/backgroud-image/raw/master/image/Girl-2023-11-2221:46:26.png" onerror="this.onerror=null;this.src='/./img/config_img/%E5%A4%9C%E6%99%9A.jpg'" alt="通过nginx访问tomcat中SpringMVC应用"/></a><div class="content"><a class="title" href="/archives/7cb9f0a8.html" title="通过nginx访问tomcat中SpringMVC应用">通过nginx访问tomcat中SpringMVC应用</a><time datetime="2023-11-22T13:52:44.616Z" title="更新于 2023-11-22 21:52:44">2023-11-22</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://gitee.com/huaiyuechusan/backgroud-image/raw/master/image/New Year-2023-11-2221:47:25.png')"><div id="footer-wrap"><div class="footer_custom_text">更多内容查看<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/huaiyuechusan/">我的GitHub</a> ！</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button><button id="go-down" type="button" title="直达底部" onclick="btf.scrollToDest(document.body.scrollHeight, 500)"><i class="fas fa-arrow-down"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><script>function loadLivere () {
+  if (typeof LivereTower === 'object') {
+    window.LivereTower.init()
+  }
+  else {
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  }
+}
+
+if ('Livere' === 'Livere' || !true) {
+  if (true) btf.loadComment(document.getElementById('lv-container'), loadLivere)
+  else loadLivere()
+}
+else {
+  function loadOtherComment () {
+    loadLivere()
+  }
+}</script></div><div class="aplayer no-destroy" data-id="875151895" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true" data-volume="0.5"> </div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="false" data-text="Nice,To,Meet,YOU" data-fontsize="15px" data-random="false" async="async"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 380px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 320px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(./img/page_img/wallhaven-y8lqo7.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/微信小程序/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer">微信小程序</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr">微信小程序</span></li><li class="categoryBar-list-item" style="background:url(./img/config_img/202310300007316.png);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/大数据/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer">大数据</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">学习总结</span></li><li class="categoryBar-list-item" style="background:url(./img/config_img/image-20231112202739060-2023-11-1220-27-56.png);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/学习总结/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer">学习总结</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr">大数据</span></li><li class="categoryBar-list-item" style="background:url(./img/config_img/202310300007012-2023-11-1123-30-55.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/深度学习/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer">深度学习</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">Python</span></li><li class="categoryBar-list-item" style="background:url(./img/config_img/202310300007316-2023-11-1123-30-57.png);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Python/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer">Python</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr">AI大模型</span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" rel="external nofollow noreferrer" style="margin-inline:5px" data-title="博客框架为Hexo_v6.2.0" title=""><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" rel="external nofollow noreferrer" style="margin-inline:5px" data-title="主题版本Butterfly_v4.3.1" title=""><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" rel="external nofollow noreferrer" style="margin-inline:5px" data-title="本站采用多线部署，主线路托管于Github Pages" title=""><img src="https://img.shields.io/badge/Hosted-Github Pages-brightgreen?style=flat&amp;logo=Github" alt=""/></a><a class="github-badge" target="_blank" href="https://gitee.com/" rel="external nofollow noreferrer" style="margin-inline:5px" data-title="本站采用多线部署，备用线路托管于Gitee Pages" title=""><img src="https://img.shields.io/badge/Hosted-Gitee Pages-22DDDD?style=flat&amp;logo=Gitee" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" rel="external nofollow noreferrer" style="margin-inline:5px" data-title="本站项目由Github托管" title=""><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" alt=""/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title=""><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt=""/></a></p>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="/./js/runtime.js"></script><!-- hexo injector body_end end --></body></html>
