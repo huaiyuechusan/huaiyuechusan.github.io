@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>下载M3U8格式加密视频</title>
+      <link href="/archives/283f9737.html"/>
+      <url>/archives/283f9737.html</url>
+      
+        <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><h1 id="下载M3U8格式加密视频"><a href="#下载M3U8格式加密视频" class="headerlink" title="下载M3U8格式加密视频"></a>下载M3U8格式加密视频</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>M3U8是一种用于指定多媒体播放列表的格式，通常用于流媒体服务。它是基于文本的文件，其中包含了视频、音频和其他媒体文件的URL链接，以及播放顺序和其他相关信息。M3U8格式广泛用于在线视频流的传输和播放。</p><p>加密视频通常是为了保护内容安全而采取的一种手段。M3U8格式的加密视频使用加密算法来对视频内容进行保护，防止未经授权的访问。这种加密可以通过在M3U8播放列表中使用特定的加密标签和密钥信息来实现。</p><p>在M3U8格式的加密视频中，通常会包含以下元素：</p><ol><li><strong>EXT-X-KEY标签：</strong> 用于指定加密算法和密钥信息。</li><li><strong>密钥URI（Key URI）：</strong> 包含了获取解密密钥的链接。</li><li><strong>IV（Initialization Vector）：</strong> 用于初始化加密算法的向量。</li></ol><p>解密M3U8格式的加密视频需要相应的密钥信息，只有拥有正确密钥的用户才能解密和播放视频内容。这种方式可以有效防止未经授权的用户访问和复制受保护的视频内容。</p><p>总的来说，M3U8格式加密视频通过使用加密算法和密钥信息，提供了一种保护内容安全的方式，确保只有授权用户才能正常播放受保护的视频。</p><h2 id="M3U8格式视频无加密"><a href="#M3U8格式视频无加密" class="headerlink" title="M3U8格式视频无加密"></a>M3U8格式视频无加密</h2><h3 id="在chrome下载拓展插件"><a href="#在chrome下载拓展插件" class="headerlink" title="在chrome下载拓展插件"></a>在chrome下载拓展插件</h3><p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202401171715330.png" alt="image-20240117164235165"></p><h3 id="打开视频网站"><a href="#打开视频网站" class="headerlink" title="打开视频网站"></a>打开视频网站</h3><p>右上角插件显示可以下载的资源，点击直接下载</p><p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202401171715332.png" alt="image-20240117164514585"></p><p>下载有进度提醒</p><p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202401171715333.png" alt="image-20240117164549804"></p><h2 id="M3U8格式视频有加密"><a href="#M3U8格式视频有加密" class="headerlink" title="M3U8格式视频有加密"></a>M3U8格式视频有加密</h2><p>若M3U8格式视频有加密，上述插件无法直接下载，需要按照如下步骤操作</p><h3 id="复制网站的带有m3u8的url"><a href="#复制网站的带有m3u8的url" class="headerlink" title="复制网站的带有m3u8的url"></a>复制网站的带有m3u8的url</h3><p>点击插件的复制网址</p><p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202401171715334.png" alt="image-20240117164809444"></p><h3 id="F12调式界面找到key"><a href="#F12调式界面找到key" class="headerlink" title="F12调式界面找到key"></a>F12调式界面找到key</h3><ol><li><p>首先找到网络里xxxVideo.js或xxxPlayer.js文件（具体网站不太，名字可能不太一样），这个js文件可以找到key的值</p><p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202401171715335.png" alt="image-20240117165401679"></p></li><li><p>在源码中打开这个js文件，crtl+f 搜索关键字decryptdata或decrypt（decrypt英文解码的意思），一般都在postMessage方法内，用来接收解密的key</p><p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202401171715336.png" alt="image-20240117165741504"></p></li><li><p>然后打断点，在右侧的作用域中找到decryptdata对用的f变量的key值，在内存检测器中可以看到16进制的key值</p><p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202401171715337.png" alt="image-20240117170016264"></p></li><li><p>将16进制转换为base64格式，即得到字符串key</p><p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202401171715338.png" alt="image-20240117170212954"></p></li></ol><h3 id="使用M3U8批量下载器下载视频"><a href="#使用M3U8批量下载器下载视频" class="headerlink" title="使用M3U8批量下载器下载视频"></a>使用M3U8批量下载器下载视频</h3><p>下载器地址<a href="https://xyyx.lanzouw.com/i9hcAwj48be">https://xyyx.lanzouw.com/i9hcAwj48be</a></p><p>将得到的key和url分别输入 文件/链接后的输入框，点击添加。然后点击全部开始，即开始下载。</p><p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202401171715339.png" alt="image-20240117171223258"></p><p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202401171715341.png" alt="image-20240117171437386"></p><p>下载后的文件保存在下载器安装位置的output位置</p><p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202401171715342.png" alt="image-20240117171534253"></p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://www.52pojie.cn/thread-1823993-1-1.html">https://www.52pojie.cn/thread-1823993-1-1.html</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 爬虫 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 爬虫 </tag>
+            
+            <tag> 学习技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>竞赛总结：智能驾驶汽车虚拟仿真视频数据理解</title>
       <link href="/archives/283f9737.html"/>
       <url>/archives/283f9737.html</url>
