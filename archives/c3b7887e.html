@@ -1,0 +1,566 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>从零入门CV图像竞赛（2024全球Deepfake攻防挑战赛） | 槐月初叁的个人博客</title><meta name="author" content="槐月初叁"><meta name="copyright" content="槐月初叁"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="Deepfake是一种利用深度学习技术，特别是生成对抗网络（GANs）来实现视频、音频等多媒体内容的伪造技术。这项技术可以实现对视频中人物的面部、表情、口型甚至身体动作的精确替换和模仿，让一个人在视频中看起来像另一个人，或者做出他们实际上并未做出的动作和表情。本次比赛使用深度学习技术检测图片是否由Deepfake生成。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从零入门CV图像竞赛（2024全球Deepfake攻防挑战赛）">
+<meta property="og:url" content="https://huaiyuechusan.gitee.io/archives/c3b7887e.html">
+<meta property="og:site_name" content="槐月初叁的个人博客">
+<meta property="og:description" content="Deepfake是一种利用深度学习技术，特别是生成对抗网络（GANs）来实现视频、音频等多媒体内容的伪造技术。这项技术可以实现对视频中人物的面部、表情、口型甚至身体动作的精确替换和模仿，让一个人在视频中看起来像另一个人，或者做出他们实际上并未做出的动作和表情。本次比赛使用深度学习技术检测图片是否由Deepfake生成。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/huaiyuechusan/backgroud-image/raw/master/image/tree-2024-1-8-20-32-52.png">
+<meta property="article:published_time" content="2024-08-04T12:52:00.000Z">
+<meta property="article:modified_time" content="2024-08-04T12:52:20.076Z">
+<meta property="article:author" content="槐月初叁">
+<meta property="article:tag" content="竞赛">
+<meta property="article:tag" content="深度学习">
+<meta property="article:tag" content="计算机视觉">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/huaiyuechusan/backgroud-image/raw/master/image/tree-2024-1-8-20-32-52.png"><link rel="shortcut icon" href="/./img/config_img/%E9%98%B3%E5%85%89%E5%B0%8F%E7%8C%AB.jpg"><link rel="canonical" href="https://huaiyuechusan.gitee.io/archives/c3b7887e"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '从零入门CV图像竞赛（2024全球Deepfake攻防挑战赛）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-08-04 20:52:20'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/echarts@4.9.0/dist/echarts.min.js"></script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css"><link rel="stylesheet" href="/./css/runtime.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="槐月初叁的个人博客" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/./img/config_img/%E9%98%B3%E5%85%89%E5%B0%8F%E7%8C%AB.jpg" onerror="onerror=null;src='./img/config_img/蓝天.jpg'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">18</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://gitee.com/huaiyuechusan/backgroud-image/raw/master/image/tree-2024-1-8-20-32-52.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">槐月初叁的个人博客</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">从零入门CV图像竞赛（2024全球Deepfake攻防挑战赛）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-08-04T12:52:00.000Z" title="发表于 2024-08-04 20:52:00">2024-08-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-08-04T12:52:20.076Z" title="更新于 2024-08-04 20:52:20">2024-08-04</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AB%9E%E8%B5%9B/">竞赛</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">5.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>19分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="从零入门CV图像竞赛（2024全球Deepfake攻防挑战赛）"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><meta name="referrer" content="no-referrer" /></p>
+<h1 id="从零入门CV图像竞赛（2024全球Deepfake攻防挑战赛）"><a href="#从零入门CV图像竞赛（2024全球Deepfake攻防挑战赛）" class="headerlink" title="从零入门CV图像竞赛（2024全球Deepfake攻防挑战赛）"></a>从零入门CV图像竞赛（2024全球Deepfake攻防挑战赛）</h1><h2 id="Deepfake是什么？"><a href="#Deepfake是什么？" class="headerlink" title="Deepfake是什么？"></a>Deepfake是什么？</h2><p>Deepfake是一种利用深度学习技术，特别是生成对抗网络（GANs）来实现视频、音频等多媒体内容的伪造技术。这项技术可以实现对视频中人物的面部、表情、口型甚至身体动作的精确替换和模仿，让一个人在视频中看起来像另一个人，或者做出他们实际上并未做出的动作和表情。</p>
+<h3 id="Deepfake的制作流程大致如下："><a href="#Deepfake的制作流程大致如下：" class="headerlink" title="Deepfake的制作流程大致如下："></a>Deepfake的制作流程大致如下：</h3><ol>
+<li><strong>数据收集</strong>：收集大量的目标人物图片和视频资料，用于训练模型。</li>
+<li><strong>模型训练</strong>：使用生成对抗网络（GAN）进行训练。GAN包含两部分，生成器（Generator）和判别器（Discriminator）。生成器的任务是生成逼真的假视频或图片，而判别器的任务是区分生成的假视频或图片和真实的视频或图片。</li>
+<li><strong>迭代优化</strong>：通过不断迭代，生成器生成的假视频或图片越来越难以被判别器识别，最终达到以假乱真的效果。</li>
+</ol>
+<h3 id="Deepfake技术具有以下特点："><a href="#Deepfake技术具有以下特点：" class="headerlink" title="Deepfake技术具有以下特点："></a>Deepfake技术具有以下特点：</h3><ul>
+<li><strong>高仿真性</strong>：经过精心制作的Deepfake内容可以达到非常高的真实度，对于普通观众来说，很难分辨其真伪。</li>
+<li><strong>多样性</strong>：不仅可以应用于视频，也可以应用于音频、图片等多种媒介。<br>Deepfake技术带来的潜在问题：</li>
+<li><strong>伦理道德问题</strong>：Deepfake可能被用于制作虚假信息、色情内容、侵犯他人隐私等，对个人名誉和社会秩序造成负面影响。</li>
+<li><strong>安全问题</strong>：在政治、经济、社会等领域，Deepfake可能被用作虚假信息传播的工具，误导公众，影响选举和决策过程。<br>针对Deepfake技术的潜在风险，各国政府、技术社区和社会组织正在努力制定相应的法律法规和对策，以防止其滥用。同时，也在开发检测和识别Deepfake内容的技术，以保护信息的真实性和社会的稳定。</li>
+</ul>
+<h2 id="如何区分Deepfake？"><a href="#如何区分Deepfake？" class="headerlink" title="如何区分Deepfake？"></a>如何区分Deepfake？</h2><p>区分Deepfake内容与真实内容是一个挑战性的任务，但随着技术的发展，已经有一些方法可以用来检测Deepfake。以下是一些常见的检测Deepfake的方法：</p>
+<ol>
+<li><strong>视觉不一致性检查</strong>：<ul>
+<li><strong>光线和阴影</strong>：检查视频中的光线和阴影是否自然，Deepfake内容可能在光线变化和阴影上存在不一致。</li>
+<li><strong>面部特征</strong>：观察面部特征是否在不同角度和表情下保持一致，Deepfake可能在某些角度下出现面部扭曲或异常。</li>
+<li><strong>眨眼和眼球运动</strong>：人类在说话时会自然眨眼和移动眼球，Deepfake可能无法准确模拟这些细节。</li>
+</ul>
+</li>
+<li><strong>图像质量分析</strong>：<ul>
+<li><strong>分辨率不一致</strong>：Deepfake视频可能在某些部分分辨率较低，尤其是当面部被合成到不同背景上时。</li>
+<li><strong>模糊和锐化</strong>：检查图像中是否有不自然的模糊或过度锐化的区域。</li>
+</ul>
+</li>
+<li><strong>生物特征检测</strong>：<ul>
+<li><strong>心跳和呼吸</strong>：通过分析视频中的心跳和呼吸模式，可以检测出与人类生理特征不符的情况。</li>
+<li><strong>面部微表情</strong>：人类的面部微表情很难被Deepfake技术完美复制，检测微表情的不自然可能揭示Deepfake。</li>
+</ul>
+</li>
+<li><strong>一致性检查</strong>：<ul>
+<li><strong>口型和声音</strong>：检查视频中人物的口型是否与声音匹配，Deepfake可能在这方面存在不一致。</li>
+<li><strong>身体动作</strong>：分析身体动作是否协调，Deepfake可能在模拟复杂的身体动作时出现不自然的情况。</li>
+</ul>
+</li>
+<li><strong>深度学习检测工具</strong>：<ul>
+<li><strong>专门的深度学习模型</strong>：已经有一些深度学习模型被训练来专门检测Deepfake内容，这些模型可以识别视频中的异常模式。</li>
+</ul>
+</li>
+<li><strong>元数据分析</strong>：<ul>
+<li><strong>视频元数据</strong>：检查视频文件的元数据，如创建日期、编辑历史等，以查找可能的篡改痕迹。</li>
+</ul>
+</li>
+<li><strong>第三方验证</strong>：<ul>
+<li><strong>专业机构</strong>：对于重要的视频内容，可以提交给专业的检测机构进行验证 </li>
+</ul>
+</li>
+</ol>
+<p>需要注意的是，随着Deepfake技术的不断进步，检测Deepfake的难度也在增加。因此，上述方法可能需要结合使用，并且需要不断更新检测工具和技术以应对新的挑战。此外，公众也应提高对Deepfake内容的警觉性，对来源不明的视频内容保持怀疑态度。</p>
+<h2 id="基于深度学习的Deepfake检测"><a href="#基于深度学习的Deepfake检测" class="headerlink" title="基于深度学习的Deepfake检测"></a>基于深度学习的Deepfake检测</h2><h3 id="代码流程"><a href="#代码流程" class="headerlink" title="代码流程"></a>代码流程</h3><ol>
+<li><strong>模型定义</strong>：使用<code>timm</code>库创建一个预训练的<code>resnet18</code>模型。</li>
+<li><strong>训练/验证数据加载</strong>：使用<code>torch.utils.data.DataLoader</code>来加载训练集和验证集数据，并通过定义的<code>transforms</code>进行数据增强。</li>
+<li><strong>训练与验证过程</strong>：<ol>
+<li>定义了<code>train</code>函数来执行模型在一个epoch上的训练过程，包括前向传播、损失计算、反向传播和参数更新。</li>
+<li>定义了<code>validate</code>函数来评估模型在验证集上的性能，计算准确率。</li>
+</ol>
+</li>
+<li><strong>性能评估</strong>：使用准确率（Accuracy）作为性能评估的主要指标，并在每个epoch后输出验证集上的准确率。</li>
+<li><strong>提交</strong>：最后，将预测结果保存到CSV文件中，准备提交到Kaggle比赛。</li>
+</ol>
+<p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202408042029641.png" alt="image-20240804182516999"></p>
+<h3 id="模型网络定义-加载预训练模型"><a href="#模型网络定义-加载预训练模型" class="headerlink" title="模型网络定义-加载预训练模型"></a>模型网络定义-加载预训练模型</h3><p>预训练模型是指在特定的大型数据集（如ImageNet）上预先训练好的神经网络模型。这些模型已经学习到了丰富的特征表示，能够识别和处理图像中的多种模式。使用预训练模型的好处是，它们可以在新数据集或新任务上进行微调（Fine-tuning），从而加快训练过程并提高模型性能，尤其是当可用的数据量有限时。</p>
+<p>在下面代码中，<code>timm.create_model(&#39;resnet18&#39;, pretrained=True, num_classes=2)</code>这行代码就是加载了一个预训练的ResNet-18模型，其中<code>pretrained=True</code>表示使用在ImageNet数据集上预训练的权重，<code>num_classes=2</code>表示模型的输出层被修改为有2个类别的输出，以适应二分类任务（例如区分真实和Deepfake图像）。通过<code>model = model.cuda()</code>将模型移动到GPU上进行加速。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> timm</span><br><span class="line">model = timm.create_model(<span class="string">&#x27;resnet18&#x27;</span>, pretrained=<span class="literal">True</span>, num_classes=<span class="number">2</span>)</span><br><span class="line">model = model.cuda()</span><br></pre></td></tr></table></figure>
+<h3 id="训练-验证集数据加载"><a href="#训练-验证集数据加载" class="headerlink" title="训练/验证集数据加载"></a>训练/验证集数据加载</h3><ol>
+<li><p>自定义<code>FFDIDataset</code>类，继承Pytorch的<code>Dataset</code>类。</p>
+<p><code>__init__</code>：读取数据集并处理</p>
+<p><code>__getitem__</code>：每次返回一个样本</p>
+<p><code>__len__</code>：返回数据集大小</p>
+</li>
+<li><p>使用<code>DataLoader</code>将数据分组。如果设置<code>shuffle=True</code>，<code>Dataloader</code>会自动排列所有样本的索引。我们在训练时经常设置<code>shuffle=True</code>。</p>
+</li>
+<li><p><strong>数据增强操作</strong></p>
+<p>数据增强是一种在机器学习和深度学习中提升模型性能的重要技术。它通过应用一系列随机变换来增加训练数据的多样性，从而提高模型的泛化能力。<strong>增加数据多样性</strong>是数据增强的核心目的。通过对原始图像进行如旋转、缩放、翻转等操作，可以生成新的训练样本，使模型学习到更丰富的特征表示。</p>
+<p><code>transforms.Compose</code>: 这是一个转换操作的组合，它将多个图像预处理步骤串联起来：</p>
+<ul>
+<li><code>transforms.Resize((256, 256))</code>：将所有图像调整为<code>256x256</code>像素的大小。</li>
+<li><code>transforms.RandomHorizontalFlip()</code>：随机水平翻转图像。</li>
+<li><code>transforms.RandomVerticalFlip()</code>：随机垂直翻转图像。</li>
+<li><code>transforms.ToTensor()</code>：将<code>PIL</code>图像或<code>Numpy</code>数组转换为<code>torch.FloatTensor</code>类型，并除以255以将像素值范围从<code>[0, 255]</code>缩放到<code>[0, 1]</code>。</li>
+<li><code>transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])</code>：对图像进行标准化，使用ImageNet数据集的均值和标准差。</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> torch.utils.data <span class="keyword">import</span> Dataset, DataLoader</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">FFDIDataset</span>(<span class="title class_ inherited__">Dataset</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, img_path, img_label, transform=<span class="literal">None</span></span>):</span><br><span class="line">        self.img_path = img_path</span><br><span class="line">        self.img_label = img_label</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> transform <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            self.transform = transform</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            self.transform = <span class="literal">None</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__getitem__</span>(<span class="params">self, index</span>):</span><br><span class="line">        img = Image.<span class="built_in">open</span>(self.img_path[index]).convert(<span class="string">&#x27;RGB&#x27;</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> self.transform <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            img = self.transform(img)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> img, torch.from_numpy(np.array(self.img_label[index]))</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__len__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(self.img_path)</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">train_loader = torch.utils.data.DataLoader(</span><br><span class="line">    FFDIDataset(train_label[<span class="string">&#x27;path&#x27;</span>], train_label[<span class="string">&#x27;target&#x27;</span>],             </span><br><span class="line">            transforms.Compose([</span><br><span class="line">                        transforms.Resize((<span class="number">256</span>, <span class="number">256</span>)),</span><br><span class="line">                        transforms.RandomHorizontalFlip(), <span class="comment"># 随机水平翻转</span></span><br><span class="line">                        transforms.RandomVerticalFlip(),   <span class="comment"># 随机垂直翻转 </span></span><br><span class="line">                        transforms.ToTensor(),</span><br><span class="line">                        transforms.Normalize([<span class="number">0.485</span>, <span class="number">0.456</span>, <span class="number">0.406</span>], [<span class="number">0.229</span>, <span class="number">0.224</span>, <span class="number">0.225</span>])</span><br><span class="line">        ])</span><br><span class="line">    ), batch_size=bs_value, shuffle=<span class="literal">True</span>, num_workers=<span class="number">4</span>, pin_memory=<span class="literal">True</span>, collate_fn=collate_fn, drop_last=<span class="literal">False</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">val_loader = torch.utils.data.DataLoader(</span><br><span class="line">    FFDIDataset(val_label[<span class="string">&#x27;path&#x27;</span>], val_label[<span class="string">&#x27;target&#x27;</span>], </span><br><span class="line">            transforms.Compose([</span><br><span class="line">                        transforms.Resize((<span class="number">256</span>, <span class="number">256</span>)),</span><br><span class="line">                        transforms.ToTensor(),</span><br><span class="line">                        transforms.Normalize([<span class="number">0.485</span>, <span class="number">0.456</span>, <span class="number">0.406</span>], [<span class="number">0.229</span>, <span class="number">0.224</span>, <span class="number">0.225</span>])</span><br><span class="line">        ])</span><br><span class="line">    ), batch_size=bs_value, shuffle=<span class="literal">False</span>, num_workers=<span class="number">4</span>, pin_memory=<span class="literal">True</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202408042029642.png" alt="image-20240804184721659"></p>
+<h3 id="训练与验证过程"><a href="#训练与验证过程" class="headerlink" title="训练与验证过程"></a>训练与验证过程</h3><p>在深度学习中，模型训练通常需要进行多次迭代，而不是单次完成。深度学习模型的训练本质上是一个优化问题，目标是最小化损失函数。梯度下降算法通过计算损失函数相对于模型参数的梯度来更新参数。由于每次参数更新只能基于一个数据批次来计算梯度，因此需要多次迭代，每次处理一个新的数据批次，以确保模型在整个数据集上都能得到优化。</p>
+<p>模型训练的流程如下：</p>
+<ol>
+<li><strong>设置训练模式</strong>：通过调用<code>model.train()</code>将模型设置为训练模式。在训练模式下，模型的某些层（如<code>BatchNorm</code>和<code>Dropout</code>）会按照它们在训练期间应有的方式运行。</li>
+<li><strong>遍历数据加载器</strong>：使用<code>enumerate(train_loader)</code>遍历<code>train_loader</code>提供的数据批次。<code>input</code>是批次中的图像数据，<code>target</code>是对应的标签。</li>
+<li><strong>数据移动到GPU</strong>：通过<code>.cuda(non_blocking=True)</code>将数据和标签移动到GPU上。<code>non_blocking</code>参数设置为<code>True</code>意味着如果数据正在被复制到GPU，此操作会立即返回，不会等待数据传输完成。</li>
+<li><strong>前向传播</strong>：通过<code>output = model(input)</code>进行前向传播，计算模型对输入数据的预测。</li>
+<li><strong>计算损失</strong>：使用损失函数<code>loss = criterion(output, target)</code>计算预测输出和目标标签之间的差异。</li>
+<li><strong>梯度归零</strong>：在每次迭代开始前，通过<code>optimizer.zero_grad()</code>清空（重置）之前的梯度，以防止梯度累积。</li>
+<li><strong>反向传播</strong>：调用<code>loss.backward()</code>计算损失相对于模型参数的梯度。</li>
+<li><strong>参数更新</strong>：通过<code>optimizer.step()</code>根据计算得到的梯度更新模型的参数。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">train</span>(<span class="params">train_loader, model, criterion, optimizer, epoch</span>):</span><br><span class="line">    batch_time = AverageMeter(<span class="string">&#x27;Time&#x27;</span>, <span class="string">&#x27;:6.3f&#x27;</span>)</span><br><span class="line">    losses = AverageMeter(<span class="string">&#x27;Loss&#x27;</span>, <span class="string">&#x27;:.4e&#x27;</span>)</span><br><span class="line">    top1 = AverageMeter(<span class="string">&#x27;Acc@1&#x27;</span>, <span class="string">&#x27;:6.2f&#x27;</span>)</span><br><span class="line">    progress = ProgressMeter(<span class="built_in">len</span>(train_loader), batch_time, losses, top1)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># switch to train mode</span></span><br><span class="line">    model.train()</span><br><span class="line"></span><br><span class="line">    end = time.time()</span><br><span class="line">    <span class="keyword">for</span> i, (<span class="built_in">input</span>, target) <span class="keyword">in</span> <span class="built_in">enumerate</span>(train_loader):</span><br><span class="line">        <span class="built_in">input</span> = <span class="built_in">input</span>.cuda(non_blocking=<span class="literal">True</span>)</span><br><span class="line">        target = target.cuda(non_blocking=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># compute output</span></span><br><span class="line">        output = model(<span class="built_in">input</span>)</span><br><span class="line">        loss = criterion(output, target)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># measure accuracy and record loss</span></span><br><span class="line">        losses.update(loss.item(), <span class="built_in">input</span>.size(<span class="number">0</span>))</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># print(f&quot;&#123;output.shape = &#125;,&#123;target.shape = &#125;&quot;)</span></span><br><span class="line">        <span class="comment"># output.shape = torch.Size([32, 2]),target.shape = torch.Size([32])</span></span><br><span class="line">        acc = (output.argmax(<span class="number">1</span>).view(-<span class="number">1</span>) == target.<span class="built_in">float</span>().view(-<span class="number">1</span>)).<span class="built_in">float</span>().mean() * <span class="number">100</span></span><br><span class="line">        top1.update(acc, <span class="built_in">input</span>.size(<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line">        <span class="comment"># compute gradient and do SGD step</span></span><br><span class="line">        optimizer.zero_grad()</span><br><span class="line">        loss.backward()</span><br><span class="line">        optimizer.step()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># measure elapsed time</span></span><br><span class="line">        batch_time.update(time.time() - end)</span><br><span class="line">        end = time.time()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> i % <span class="number">100</span> == <span class="number">0</span>:</span><br><span class="line">            progress.pr2int(i)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">validate</span>(<span class="params">val_loader, model, criterion</span>):</span><br><span class="line">    batch_time = AverageMeter(<span class="string">&#x27;Time&#x27;</span>, <span class="string">&#x27;:6.3f&#x27;</span>)</span><br><span class="line">    losses = AverageMeter(<span class="string">&#x27;Loss&#x27;</span>, <span class="string">&#x27;:.4e&#x27;</span>)</span><br><span class="line">    top1 = AverageMeter(<span class="string">&#x27;Acc@1&#x27;</span>, <span class="string">&#x27;:6.2f&#x27;</span>)</span><br><span class="line">    progress = ProgressMeter(<span class="built_in">len</span>(val_loader), batch_time, losses, top1)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># switch to evaluate mode</span></span><br><span class="line">    model.<span class="built_in">eval</span>()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">with</span> torch.no_grad():</span><br><span class="line">        end = time.time()</span><br><span class="line">        <span class="keyword">for</span> i, (<span class="built_in">input</span>, target) <span class="keyword">in</span> tqdm_notebook(<span class="built_in">enumerate</span>(val_loader), total=<span class="built_in">len</span>(val_loader)):</span><br><span class="line">            <span class="built_in">input</span> = <span class="built_in">input</span>.cuda()</span><br><span class="line">            target = target.cuda()</span><br><span class="line"></span><br><span class="line">            <span class="comment"># compute output</span></span><br><span class="line">            output = model(<span class="built_in">input</span>)</span><br><span class="line">            loss = criterion(output, target)</span><br><span class="line"></span><br><span class="line">            <span class="comment"># measure accuracy and record loss</span></span><br><span class="line">            acc = (output.argmax(<span class="number">1</span>).view(-<span class="number">1</span>) == target.<span class="built_in">float</span>().view(-<span class="number">1</span>)).<span class="built_in">float</span>().mean() * <span class="number">100</span></span><br><span class="line">            losses.update(loss.item(), <span class="built_in">input</span>.size(<span class="number">0</span>))</span><br><span class="line">            top1.update(acc, <span class="built_in">input</span>.size(<span class="number">0</span>))</span><br><span class="line">            <span class="comment"># measure elapsed time</span></span><br><span class="line">            batch_time.update(time.time() - end)</span><br><span class="line">            end = time.time()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># <span class="doctag">TODO:</span> this should also be done with the ProgressMeter</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27; * Acc@1 &#123;top1.avg:.3f&#125;&#x27;</span></span><br><span class="line">              .<span class="built_in">format</span>(top1=top1))</span><br><span class="line">        <span class="keyword">return</span> top1</span><br></pre></td></tr></table></figure>
+<h3 id="性能评估"><a href="#性能评估" class="headerlink" title="性能评估"></a>性能评估</h3><p>使用准确率（Accuracy）作为性能评估的主要指标，并在每个epoch后输出验证集上的准确率。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义损失函数</span></span><br><span class="line">criterion = nn.CrossEntropyLoss().cuda()</span><br><span class="line"><span class="comment"># 定义优化算法</span></span><br><span class="line">optimizer = torch.optim.Adam(model.parameters(), <span class="number">0.005</span>)</span><br><span class="line"><span class="comment"># 定义学习率</span></span><br><span class="line">scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=<span class="number">4</span>, gamma=<span class="number">0.85</span>)</span><br><span class="line">best_acc = <span class="number">0.0</span></span><br><span class="line"><span class="keyword">for</span> epoch <span class="keyword">in</span> <span class="built_in">range</span>(epoch_num):</span><br><span class="line">    scheduler.step()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;Epoch: &#x27;</span>, epoch)</span><br><span class="line"></span><br><span class="line">    train_mix(train_loader, model, criterion, optimizer, epoch)</span><br><span class="line">    val_acc = validate(val_loader, model, criterion)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> val_acc.avg.item() &gt; best_acc:</span><br><span class="line">        best_acc = <span class="built_in">round</span>(val_acc.avg.item(), <span class="number">2</span>)</span><br><span class="line">        torch.save(model.state_dict(), <span class="string">f&#x27;./model_<span class="subst">&#123;best_acc&#125;</span>.pt&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="测试集上预测并提交结果"><a href="#测试集上预测并提交结果" class="headerlink" title="测试集上预测并提交结果"></a>测试集上预测并提交结果</h3><p>定义<code>predict</code>函数，使用训练好的模型预测结果，将预测结果保存到CSV文件中，准备提交到Kaggle比赛。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">predict</span>(<span class="params">test_loader, model, tta=<span class="number">10</span></span>):</span><br><span class="line">    <span class="comment"># switch to evaluate mode</span></span><br><span class="line">    model.<span class="built_in">eval</span>()</span><br><span class="line">    </span><br><span class="line">    test_pred_tta = <span class="literal">None</span></span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(tta):</span><br><span class="line">        test_pred = []</span><br><span class="line">        <span class="keyword">with</span> torch.no_grad():</span><br><span class="line">            end = time.time()</span><br><span class="line">            <span class="keyword">for</span> i, (<span class="built_in">input</span>, target) <span class="keyword">in</span> tqdm_notebook(<span class="built_in">enumerate</span>(test_loader), total=<span class="built_in">len</span>(test_loader)):</span><br><span class="line">                <span class="built_in">input</span> = <span class="built_in">input</span>.cuda()</span><br><span class="line">                target = target.cuda()</span><br><span class="line"></span><br><span class="line">                <span class="comment"># compute output</span></span><br><span class="line">                output = model(<span class="built_in">input</span>)</span><br><span class="line">                output = F.softmax(output, dim=<span class="number">1</span>)</span><br><span class="line">                output = output.data.cpu().numpy()</span><br><span class="line"></span><br><span class="line">                test_pred.append(output)</span><br><span class="line">        test_pred = np.vstack(test_pred)</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">if</span> test_pred_tta <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            test_pred_tta = test_pred</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            test_pred_tta += test_pred</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> test_pred_tta</span><br><span class="line"></span><br><span class="line">test_loader = torch.utils.data.DataLoader(</span><br><span class="line">    FFDIDataset(val_label[<span class="string">&#x27;path&#x27;</span>], val_label[<span class="string">&#x27;target&#x27;</span>], </span><br><span class="line">            transforms.Compose([</span><br><span class="line">                        transforms.Resize((<span class="number">256</span>, <span class="number">256</span>)),</span><br><span class="line">                        transforms.ToTensor(),</span><br><span class="line">                        transforms.Normalize([<span class="number">0.485</span>, <span class="number">0.456</span>, <span class="number">0.406</span>], [<span class="number">0.229</span>, <span class="number">0.224</span>, <span class="number">0.225</span>])</span><br><span class="line">        ])</span><br><span class="line">    ), batch_size=bs_value, shuffle=<span class="literal">False</span>, num_workers=<span class="number">4</span>, pin_memory=<span class="literal">True</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">val_label[<span class="string">&#x27;y_pred&#x27;</span>] = predict(test_loader, model, <span class="number">1</span>)[:, <span class="number">1</span>]</span><br><span class="line">val_label[[<span class="string">&#x27;img_name&#x27;</span>, <span class="string">&#x27;y_pred&#x27;</span>]].to_csv(<span class="string">&#x27;submit.csv&#x27;</span>, index=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="改进方向"><a href="#改进方向" class="headerlink" title="改进方向"></a>改进方向</h3><p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202408042029643.png" alt="image-20240802175944582"></p>
+<h4 id="更多数据集增强"><a href="#更多数据集增强" class="headerlink" title="更多数据集增强"></a>更多数据集增强</h4><ol>
+<li><p>几何变换</p>
+<ul>
+<li>调整大小: <code>Resize</code>可以将图像调整到指定的大小。</li>
+<li>随机裁剪: <code>RandomCrop</code>和<code>RandomResizedCrop</code>可以随机裁剪图像。</li>
+<li>中心裁剪: <code>CenterCrop</code>从图像的中心裁剪出指定大小。</li>
+<li>五裁剪和十裁剪: <code>FiveCrop</code>和<code>TenCrop</code>分别裁剪出图像的四个角和中心区域。</li>
+<li>翻转: <code>RandomHorizontalFlip</code>和<code>RandomVerticalFlip</code>可以水平或垂直翻转图像。</li>
+<li>旋转: <code>RandomRotation</code>可以随机旋转图像。</li>
+<li>仿射变换: <code>RandomAffine</code>可以进行随机的仿射变换。</li>
+<li>透视变换: <code>RandomPerspective</code>可以进行随机的透视变换。</li>
+</ul>
+</li>
+<li><p>颜色变换</p>
+<ul>
+<li>颜色抖动: <code>ColorJitter</code>可以随机改变图像的亮度、对比度、饱和度和色调。</li>
+<li>灰度化: <code>Grayscale</code>和<code>RandomGrayscale</code>可以将图像转换为灰度图。</li>
+<li>高斯模糊: <code>GaussianBlur</code>可以对图像进行高斯模糊。</li>
+<li>颜色反转: <code>RandomInvert</code>可以随机反转图像的颜色。</li>
+<li>颜色 posterize: <code>RandomPosterize</code>可以减少图像中每个颜色通道的位数。</li>
+<li>颜色 solarize: <code>RandomSolarize</code>可以反转图像中所有高于阈值的像素值。</li>
+</ul>
+</li>
+<li><p>自动增强</p>
+<ul>
+<li>自动增强: <code>AutoAugment</code>可以根据数据集自动学习数据增强策略。</li>
+<li>随机增强: <code>RandAugment</code>可以随机应用一系列数据增强操作。</li>
+<li><code>TrivialAugmentWide</code>:提供与数据集无关的数据增强。</li>
+<li><code>AugMix</code>:通过混合多个增强操作进行数据增强。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">transforms.Compose([</span><br><span class="line">    <span class="comment">####几何变换####</span></span><br><span class="line">    transforms.Resize((<span class="number">256</span>, <span class="number">256</span>)),</span><br><span class="line">    transforms.RandomPerspective(distortion_scale=<span class="number">0.6</span>, p=<span class="number">1.0</span>),  <span class="comment"># 随机透视转换</span></span><br><span class="line">    transforms.RandomRotation(degrees=(<span class="number">0</span>, <span class="number">180</span>)),                <span class="comment"># 随机旋转</span></span><br><span class="line">    transforms.RandomAffine(degrees=(<span class="number">30</span>, <span class="number">70</span>), translate=(<span class="number">0.1</span>, <span class="number">0.3</span>), scale=(<span class="number">0.5</span>, <span class="number">0.75</span>)), <span class="comment"># 随机仿射</span></span><br><span class="line">    transforms.RandomHorizontalFlip(), <span class="comment"># 随机水平翻转</span></span><br><span class="line">    transforms.RandomVerticalFlip(),   <span class="comment"># 随机垂直翻转</span></span><br><span class="line">    <span class="comment">####颜色变换</span></span><br><span class="line">    transforms.RandomInvert(),  <span class="comment"># 随机反转颜色</span></span><br><span class="line">    transforms.GaussianBlur(kernel_size=(<span class="number">5</span>, <span class="number">9</span>), sigma=(<span class="number">0.1</span>, <span class="number">5.</span>)),  <span class="comment"># 高斯模糊变换</span></span><br><span class="line">    transforms.ColorJitter(brightness=<span class="number">.5</span>, hue=<span class="number">.3</span>),    <span class="comment"># 颜色抖动</span></span><br><span class="line">    transforms.RandomPosterize(bits=<span class="number">2</span>), <span class="comment"># 减少图像中每个颜色通道的位数</span></span><br><span class="line">    transforms.RandomSolarize(threshold=<span class="number">192.0</span>), <span class="comment"># 反转图像中所有高于阈值的像素值</span></span><br><span class="line">    transforms.RandomAdjustSharpness(sharpness_factor=<span class="number">2</span>),  <span class="comment"># 随机锐度</span></span><br><span class="line">    transforms.RandomEqualize(),       <span class="comment"># 随机均衡</span></span><br><span class="line">    transforms.RandomAutocontrast(),   <span class="comment"># 随机自动对比</span></span><br><span class="line">    <span class="comment">####自动增强####</span></span><br><span class="line">    transforms.AugMix(),   <span class="comment"># 混合多个增强操作进行数据增强</span></span><br><span class="line">    transforms.AutoAugment(transforms.AutoAugmentPolicy.IMAGENET),  <span class="comment"># 根据给定的自动增强策略自动增强数据</span></span><br><span class="line">    transforms.RandAugment(), <span class="comment"># 随机策略增强</span></span><br><span class="line">    transforms.TrivialAugmentWide()  <span class="comment"># AutoAugment 的替代实现</span></span><br><span class="line"></span><br><span class="line">    transforms.ToTensor(),</span><br><span class="line">    transforms.Normalize([<span class="number">0.485</span>, <span class="number">0.456</span>, <span class="number">0.406</span>], [<span class="number">0.229</span>, <span class="number">0.224</span>, <span class="number">0.225</span>])</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol>
+<li><p>Mixup</p>
+<p>MixUp是一种数据增强技术，其原理是通过将两个不同的图像及其标签按照一定的比例混合，从而创建一个新的训练样本。这种方法可以增加训练数据的多样性，提高模型的泛化能力，并减少过拟合的风险。MixUp方法中混合比例是一个超参数，通常称为<code>alpha</code>。<code>alpha</code>是一个在0到1之间的值，表示混合的比例。例如，<code>alpha=0.5</code>意味着两个图像各占新图像的一半。</p>
+<p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202408042029644.png" alt="image-20240804200115064"></p>
+<p>MixUp的混合过程包括以下步骤：</p>
+<ul>
+<li>从训练集中随机选择两个图像和它们的标签。</li>
+<li>将这两个图像按照<code>alpha</code>的比例混合，得到一个新的图像。</li>
+<li>将这两个标签按照相同的<code>alpha</code>比例混合，得到一个新的标签。</li>
+</ul>
+<p>MixUp方法具有以下几个优点：</p>
+<ul>
+<li>增加数据多样性：通过混合不同的图像和标签，MixUp可以创建更多样化的训练样本，帮助模型学习到更加鲁棒的特征表示。</li>
+<li>减少过拟合：MixUp可以减少模型对特定训练样本的依赖，从而降低过拟合的风险。</li>
+<li>提高泛化能力：MixUp可以帮助模型学习到更加泛化的特征表示，从而提高模型在未见过的数据上的表现。</li>
+</ul>
+</li>
+<li><p>Cutmix</p>
+<p>CutMix是一种数据增强技术，它通过将一个图像的一部分剪切并粘贴到另一个图像上来创建新的训练样本。同时，它也会根据剪切区域的大小来调整两个图像的标签。</p>
+<p>CutMix方法中，剪切和粘贴操作是关键步骤。</p>
+<p>具体来说，剪切和粘贴过程包括以下步骤：</p>
+<ul>
+<li>从训练集中随机选择两个图像和它们的标签。</li>
+<li>随机选择一个剪切区域的大小和位置。</li>
+<li>将第一个图像的剪切区域粘贴到第二个图像上，得到一个新的图像。</li>
+<li>根据剪切区域的大小，计算两个图像的标签的加权平均值，得到一个新的标签。</li>
+</ul>
+<p>Mixup和Cutmix具体代码（参考文档：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://pytorch.ac.cn/vision/0.18/auto_examples/transforms/plot_cutmix_mixup.html">如何使用 CutMix 和 MixUp — Torchvision 0.18 文档 - PyTorch 中文</a>）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> torchvision.transforms <span class="keyword">import</span> v2</span><br><span class="line"><span class="keyword">from</span> torch.utils.data <span class="keyword">import</span> default_collate</span><br><span class="line"></span><br><span class="line">NUM_CLASSES = <span class="number">2</span></span><br><span class="line"></span><br><span class="line">cutmix = v2.CutMix(num_classes=NUM_CLASSES)</span><br><span class="line">mixup = v2.MixUp(num_classes=NUM_CLASSES)</span><br><span class="line">cutmix_or_mixup = v2.RandomChoice([cutmix, mixup])</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">collate_fn</span>(<span class="params">batch</span>):</span><br><span class="line">    <span class="keyword">return</span> cutmix_or_mixup(*default_collate(batch))</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 需重新定义train方法  </span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">train_mix</span>(<span class="params">train_loader, model, criterion, optimizer, epoch</span>):</span><br><span class="line">    batch_time = AverageMeter(<span class="string">&#x27;Time&#x27;</span>, <span class="string">&#x27;:6.3f&#x27;</span>)</span><br><span class="line">    losses = AverageMeter(<span class="string">&#x27;Loss&#x27;</span>, <span class="string">&#x27;:.4e&#x27;</span>)</span><br><span class="line">    top1 = AverageMeter(<span class="string">&#x27;Acc@1&#x27;</span>, <span class="string">&#x27;:6.2f&#x27;</span>)</span><br><span class="line">    progress = ProgressMeter(<span class="built_in">len</span>(train_loader), batch_time, losses, top1)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># switch to train mode</span></span><br><span class="line">    model.train()</span><br><span class="line"></span><br><span class="line">    end = time.time()</span><br><span class="line">    <span class="keyword">for</span> i, (<span class="built_in">input</span>, target) <span class="keyword">in</span> <span class="built_in">enumerate</span>(train_loader):</span><br><span class="line">        <span class="built_in">input</span> = <span class="built_in">input</span>.cuda(non_blocking=<span class="literal">True</span>)</span><br><span class="line">        target = target.cuda(non_blocking=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># compute output</span></span><br><span class="line">        output = model(<span class="built_in">input</span>)</span><br><span class="line">        loss = criterion(output, target)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># measure accuracy and record loss</span></span><br><span class="line">        losses.update(loss.item(), <span class="built_in">input</span>.size(<span class="number">0</span>))</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># print(f&quot;&#123;output.shape = &#125;,&#123;target.shape = &#125;&quot;)</span></span><br><span class="line">        <span class="comment"># output.shape = torch.Size([32, 2]),target.shape = torch.Size([32, 2])</span></span><br><span class="line">        <span class="comment"># 与不带cutmix、mixup的代码差别，cutmix、mixup操作会增加target的维度，需要选取指定维度</span></span><br><span class="line">        acc = (output.argmax(<span class="number">1</span>).view(-<span class="number">1</span>) == target.argmax(dim=<span class="number">1</span>).<span class="built_in">float</span>().view(-<span class="number">1</span>)).<span class="built_in">float</span>().mean() * <span class="number">100</span></span><br><span class="line">        top1.update(acc, <span class="built_in">input</span>.size(<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line">        <span class="comment"># compute gradient and do SGD step</span></span><br><span class="line">        optimizer.zero_grad()</span><br><span class="line">        loss.backward()</span><br><span class="line">        optimizer.step()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># measure elapsed time</span></span><br><span class="line">        batch_time.update(time.time() - end)</span><br><span class="line">        end = time.time()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> i % <span class="number">100</span> == <span class="number">0</span>:</span><br><span class="line">            progress.pr2int(i)</span><br><span class="line"></span><br><span class="line"><span class="comment">#######################添加cutmix&amp;mixup############################################</span></span><br><span class="line">train_loader = torch.utils.data.DataLoader(</span><br><span class="line">    FFDIDataset(train_label[<span class="string">&#x27;path&#x27;</span>], train_label[<span class="string">&#x27;target&#x27;</span>],             </span><br><span class="line">            transforms.Compose([</span><br><span class="line">                        <span class="comment">####几何变换####</span></span><br><span class="line">                        transforms.Resize((<span class="number">256</span>, <span class="number">256</span>)),</span><br><span class="line">                        <span class="comment">####颜色变换</span></span><br><span class="line">                        transforms.ColorJitter(brightness=<span class="number">.5</span>, hue=<span class="number">.3</span>),    <span class="comment"># 颜色抖动</span></span><br><span class="line">                        transforms.RandomEqualize(),       <span class="comment"># 随机均衡</span></span><br><span class="line">                        transforms.RandomAutocontrast(),   <span class="comment"># 随机自动对比</span></span><br><span class="line">                        <span class="comment">####自动增强####</span></span><br><span class="line">                        transforms.AugMix(),   <span class="comment"># 混合多个增强操作进行数据增强</span></span><br><span class="line">                        transforms.AutoAugment(transforms.AutoAugmentPolicy.IMAGENET), <span class="comment"># 根据给定的增强策略自动增强数据</span></span><br><span class="line">          </span><br><span class="line">                        transforms.ToTensor(),</span><br><span class="line">                        transforms.Normalize([<span class="number">0.485</span>, <span class="number">0.456</span>, <span class="number">0.406</span>], [<span class="number">0.229</span>, <span class="number">0.224</span>, <span class="number">0.225</span>])</span><br><span class="line">        ])</span><br><span class="line">    ), batch_size=bs_value, shuffle=<span class="literal">True</span>, num_workers=<span class="number">4</span>, pin_memory=<span class="literal">True</span>, collate_fn=collate_fn, drop_last=<span class="literal">False</span></span><br><span class="line">)  <span class="comment"># 添加collate_fn参数。 它允许您定义一个自定义的函数，该函数用于处理和组合来自不同数据源的样本，以便它们可以被有效地批量处理。                                                  </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 验证集数据加载不需要变化</span></span><br><span class="line">val_loader = torch.utils.data.DataLoader(</span><br><span class="line">    FFDIDataset(val_label[<span class="string">&#x27;path&#x27;</span>], val_label[<span class="string">&#x27;target&#x27;</span>], </span><br><span class="line">            transforms.Compose([</span><br><span class="line">                        transforms.Resize((<span class="number">256</span>, <span class="number">256</span>)),</span><br><span class="line">                        transforms.ToTensor(),</span><br><span class="line">                        transforms.Normalize([<span class="number">0.485</span>, <span class="number">0.456</span>, <span class="number">0.406</span>], [<span class="number">0.229</span>, <span class="number">0.224</span>, <span class="number">0.225</span>])</span><br><span class="line">        ])</span><br><span class="line">    ), batch_size=bs_value, shuffle=<span class="literal">False</span>, num_workers=<span class="number">4</span>, pin_memory=<span class="literal">True</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>cutmix、mixup数据增强的得分正在跑，后续会更新</p>
+</blockquote>
+<h4 id="更换模型"><a href="#更换模型" class="headerlink" title="更换模型"></a>更换模型</h4><p>使用比resnet18更大的预训练模型（:warning:只允许使用 ImageNet1K 的预训练模型）</p>
+<p>不同模型得分表</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>model</th>
+<th>epoch</th>
+<th>score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>efficientnet_b0</td>
+<td>10</td>
+<td>0.9921364049</td>
+</tr>
+<tr>
+<td>efficientnet_b4</td>
+<td>5</td>
+<td>0.9874735502</td>
+</tr>
+<tr>
+<td>mobilenetv3_large_100.miil_in21k_ft_in1k</td>
+<td>5</td>
+<td>0.9492682898</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202408042029645.png" alt="目前得分"></p>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><p>探究验证集和训练集产生逻辑&amp;缩放数据集：暂时没有想到如何的实现，感兴趣的可以在评论区讨论，大家一起学习。</p>
+<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>感谢Datawhaler开源学习组织提供的组队学习平台和经验分享会，感谢九月大佬的代码分享。欢迎大家来组队一起学习。</p>
+<p>完整代码地址：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.kaggle.com/code/sunsanshui/deepfake-ffdi-how-to-imporve-socres">Deepfake-FFDI-how to imporve socres | Kaggle</a></p>
+<p>Datawhaler学习手册：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://datawhaler.feishu.cn/wiki/Uou8w9igsibGP7kduiycCgesnOh">‌⁠﻿‍‬‌‬‬‍‍‬‌‬‍⁠‌‌‍‍﻿‌‌‌﻿‬⁠﻿﻿‌‍⁠从零入门CV图像竞赛(Deepfake攻防) - 飞书云文档 (feishu.cn)</a></p>
+<p>九月大佬的代码：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.kaggle.com/code/chg0901/0-98766-deepfake-ffdi-way-to-get-top-scores">[九月0.98766]Deepfake-FFDI-Way to Get Top Scores | Kaggle</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://huaiyuechusan.gitee.io">槐月初叁</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://huaiyuechusan.gitee.io/archives/c3b7887e.html">https://huaiyuechusan.gitee.io/archives/c3b7887e.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://huaiyuechusan.gitee.io" target="_blank">槐月初叁的个人博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%AB%9E%E8%B5%9B/">竞赛</a><a class="post-meta__tags" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a><a class="post-meta__tags" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">计算机视觉</a></div><div class="post_share"><div class="social-share" data-image="https://gitee.com/huaiyuechusan/backgroud-image/raw/master/image/tree-2024-1-8-20-32-52.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/archives/763f7a6d.html"><img class="prev-cover" src="https://gitee.com/huaiyuechusan/backgroud-image/raw/master/image/preview-2024-1-8-18-11-04.gif" onerror="onerror=null;src='/./img/config_img/%E5%A4%9C%E6%99%9A.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">大模型开发实战</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/archives/283f9737.html" title="竞赛总结：智能驾驶汽车虚拟仿真视频数据理解"><img class="cover" src="https://gitee.com/huaiyuechusan/backgroud-image/raw/master/image/preview-2024-1-8-17-35-44.gif" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2024-01-14</div><div class="title">竞赛总结：智能驾驶汽车虚拟仿真视频数据理解</div></div></a></div><div><a href="/archives/17a30d1a.html" title="《动手学深度学习》学习笔记"><img class="cover" src="https://gitee.com/huaiyuechusan/backgroud-image/raw/master/image/New Year-2023-11-2221:47:25.png" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2024-01-11</div><div class="title">《动手学深度学习》学习笔记</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="lv-container" data-id="city" data-uid="MTAyMC81OTEzMS8zNTU5Mw=="></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/./img/config_img/%E9%98%B3%E5%85%89%E5%B0%8F%E7%8C%AB.jpg" onerror="this.onerror=null;this.src='/./img/config_img/%E8%93%9D%E5%A4%A9.jpg'" alt="avatar"/></div><div class="author-info__name">槐月初叁</div><div class="author-info__description">今天不学习，明天变垃圾</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">18</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/huaiyuechusan"><i class="fa-sharp fa-solid fa-plane"></i><span>欢迎关注我的Github</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/huaiyuechusan" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1971601012@qq.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://huaiyuechusan.github.io/atom.xml" rel="external nofollow noreferrer" target="_blank" title=""><i class="fas fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到槐月初叁的博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%8E%E9%9B%B6%E5%85%A5%E9%97%A8CV%E5%9B%BE%E5%83%8F%E7%AB%9E%E8%B5%9B%EF%BC%882024%E5%85%A8%E7%90%83Deepfake%E6%94%BB%E9%98%B2%E6%8C%91%E6%88%98%E8%B5%9B%EF%BC%89"><span class="toc-text">从零入门CV图像竞赛（2024全球Deepfake攻防挑战赛）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Deepfake%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">Deepfake是什么？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Deepfake%E7%9A%84%E5%88%B6%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%A4%A7%E8%87%B4%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="toc-text">Deepfake的制作流程大致如下：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deepfake%E6%8A%80%E6%9C%AF%E5%85%B7%E6%9C%89%E4%BB%A5%E4%B8%8B%E7%89%B9%E7%82%B9%EF%BC%9A"><span class="toc-text">Deepfake技术具有以下特点：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%8C%BA%E5%88%86Deepfake%EF%BC%9F"><span class="toc-text">如何区分Deepfake？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84Deepfake%E6%A3%80%E6%B5%8B"><span class="toc-text">基于深度学习的Deepfake检测</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E6%B5%81%E7%A8%8B"><span class="toc-text">代码流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E7%BD%91%E7%BB%9C%E5%AE%9A%E4%B9%89-%E5%8A%A0%E8%BD%BD%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B"><span class="toc-text">模型网络定义-加载预训练模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%AD%E7%BB%83-%E9%AA%8C%E8%AF%81%E9%9B%86%E6%95%B0%E6%8D%AE%E5%8A%A0%E8%BD%BD"><span class="toc-text">训练&#x2F;验证集数据加载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%AD%E7%BB%83%E4%B8%8E%E9%AA%8C%E8%AF%81%E8%BF%87%E7%A8%8B"><span class="toc-text">训练与验证过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E8%AF%84%E4%BC%B0"><span class="toc-text">性能评估</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E9%9B%86%E4%B8%8A%E9%A2%84%E6%B5%8B%E5%B9%B6%E6%8F%90%E4%BA%A4%E7%BB%93%E6%9E%9C"><span class="toc-text">测试集上预测并提交结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%B9%E8%BF%9B%E6%96%B9%E5%90%91"><span class="toc-text">改进方向</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9B%B4%E5%A4%9A%E6%95%B0%E6%8D%AE%E9%9B%86%E5%A2%9E%E5%BC%BA"><span class="toc-text">更多数据集增强</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9B%B4%E6%8D%A2%E6%A8%A1%E5%9E%8B"><span class="toc-text">更换模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-text">其他</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%B4%E8%B0%A2"><span class="toc-text">致谢</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/archives/c3b7887e.html" title="从零入门CV图像竞赛（2024全球Deepfake攻防挑战赛）"><img src="https://gitee.com/huaiyuechusan/backgroud-image/raw/master/image/tree-2024-1-8-20-32-52.png" onerror="this.onerror=null;this.src='/./img/config_img/%E5%A4%9C%E6%99%9A.jpg'" alt="从零入门CV图像竞赛（2024全球Deepfake攻防挑战赛）"/></a><div class="content"><a class="title" href="/archives/c3b7887e.html" title="从零入门CV图像竞赛（2024全球Deepfake攻防挑战赛）">从零入门CV图像竞赛（2024全球Deepfake攻防挑战赛）</a><time datetime="2024-08-04T12:52:20.076Z" title="更新于 2024-08-04 20:52:20">2024-08-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/763f7a6d.html" title="大模型开发实战"><img src="https://gitee.com/huaiyuechusan/backgroud-image/raw/master/image/preview-2024-1-8-18-11-04.gif" onerror="this.onerror=null;this.src='/./img/config_img/%E5%A4%9C%E6%99%9A.jpg'" alt="大模型开发实战"/></a><div class="content"><a class="title" href="/archives/763f7a6d.html" title="大模型开发实战">大模型开发实战</a><time datetime="2024-06-19T15:03:28.800Z" title="更新于 2024-06-19 23:03:28">2024-06-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/9ac21f23.html" title="本地基于知识库的大模型的使用教程"><img src="https://gitee.com/huaiyuechusan/backgroud-image/raw/master/image/preview-2024-1-8-17-37-29.jpg" onerror="this.onerror=null;this.src='/./img/config_img/%E5%A4%9C%E6%99%9A.jpg'" alt="本地基于知识库的大模型的使用教程"/></a><div class="content"><a class="title" href="/archives/9ac21f23.html" title="本地基于知识库的大模型的使用教程">本地基于知识库的大模型的使用教程</a><time datetime="2024-05-19T15:07:29.025Z" title="更新于 2024-05-19 23:07:29">2024-05-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/d9ef328.html" title="Python入门"><img src="https://gitee.com/huaiyuechusan/backgroud-image/raw/master/image/image-20231112203059300-2023-11-1220:31:16.png" onerror="this.onerror=null;this.src='/./img/config_img/%E5%A4%9C%E6%99%9A.jpg'" alt="Python入门"/></a><div class="content"><a class="title" href="/archives/d9ef328.html" title="Python入门">Python入门</a><time datetime="2024-05-19T15:04:50.106Z" title="更新于 2024-05-19 23:04:50">2024-05-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/d8093044.html" title="ShellScript脚本编程"><img src="https://gitee.com/huaiyuechusan/backgroud-image/raw/master/image/preview-2024-1-8-17-37-26.gif" onerror="this.onerror=null;this.src='/./img/config_img/%E5%A4%9C%E6%99%9A.jpg'" alt="ShellScript脚本编程"/></a><div class="content"><a class="title" href="/archives/d8093044.html" title="ShellScript脚本编程">ShellScript脚本编程</a><time datetime="2024-02-04T04:32:24.098Z" title="更新于 2024-02-04 12:32:24">2024-02-04</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://gitee.com/huaiyuechusan/backgroud-image/raw/master/image/tree-2024-1-8-20-32-52.png')"><div id="footer-wrap"><div class="footer_custom_text">更多内容查看<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/huaiyuechusan/">我的GitHub</a> ！</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button><button id="go-down" type="button" title="直达底部" onclick="btf.scrollToDest(document.body.scrollHeight, 500)"><i class="fas fa-arrow-down"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><script>function loadLivere () {
+  if (typeof LivereTower === 'object') {
+    window.LivereTower.init()
+  }
+  else {
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  }
+}
+
+if ('Livere' === 'Livere' || !true) {
+  if (true) btf.loadComment(document.getElementById('lv-container'), loadLivere)
+  else loadLivere()
+}
+else {
+  function loadOtherComment () {
+    loadLivere()
+  }
+}</script></div><div class="aplayer no-destroy" data-id="875151895" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true" data-volume="0.5"> </div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="false" data-text="Nice,To,Meet,YOU" data-fontsize="15px" data-random="false" async="async"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 380px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 320px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(./img/config_img/image-20231112202739060-2023-11-1220-27-56.png);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/爬虫/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer">爬虫</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(./img/config_img/202310300007012-2023-11-1123-30-55.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/微信小程序/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer">微信小程序</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(./img/config_img/202310300007316-2023-11-1123-30-57.png);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/学习总结/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer">学习总结</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(./img/config_img/Cat-2023-11-2221-47-16.png);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/大数据/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer">大数据</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(./img/config_img/preview-2024-1-8-17-36-46.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/AI大模型/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer">AI大模型</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(./img/config_img/preview-2024-1-8-17-36-11.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/竞赛/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer">竞赛</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(./img/config_img/Starry-Night-in-Anime-Wallpaper-2023-11-2221-46-39.png);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/深度学习/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer">深度学习</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(./img/page_img/wallhaven-y8lqo7.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Python/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer">Python</a><span class="categoryBar-list-count">4</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(./img/config_img/preview-2024-1-8-17-34-25.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Liunx/&quot;);" href="javascript:void(0);" rel="external nofollow noreferrer">Liunx</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" rel="external nofollow noreferrer" style="margin-inline:5px" data-title="博客框架为Hexo_v6.2.0" title=""><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" rel="external nofollow noreferrer" style="margin-inline:5px" data-title="主题版本Butterfly_v4.3.1" title=""><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" rel="external nofollow noreferrer" style="margin-inline:5px" data-title="本站采用多线部署，主线路托管于Github Pages" title=""><img src="https://img.shields.io/badge/Hosted-Github Pages-brightgreen?style=flat&amp;logo=Github" alt=""/></a><a class="github-badge" target="_blank" href="https://gitee.com/" rel="external nofollow noreferrer" style="margin-inline:5px" data-title="本站采用多线部署，备用线路托管于Gitee Pages" title=""><img src="https://img.shields.io/badge/Hosted-Gitee Pages-22DDDD?style=flat&amp;logo=Gitee" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" rel="external nofollow noreferrer" style="margin-inline:5px" data-title="本站项目由Github托管" title=""><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" alt=""/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title=""><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt=""/></a></p>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="/./js/runtime.js"></script><!-- hexo injector body_end end --></body></html>
