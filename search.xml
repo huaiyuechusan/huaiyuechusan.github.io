@@ -4,6 +4,58 @@
   
     
     <entry>
+      <title>读论文框架</title>
+      <link href="/archives/f049facd.html"/>
+      <url>/archives/f049facd.html</url>
+      
+        <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><h1 id="读论文框架"><a href="#读论文框架" class="headerlink" title="读论文框架"></a>读论文框架</h1><h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><ol><li>研究现状</li><li>==现有领域存在的问题==      :warning:重点关注</li><li>针对现有问题，你的解决方案   （宏观的描述）  we propose …. introduce   :warning:重点关注</li><li>具体解决方案是什么…  （具体的细节）</li><li>实验 结果，超过SoTA多少</li></ol><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>对abstract每点的扩充</p><p>contribution</p><ul><li>哪些贡献</li><li>…..</li></ul><h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><p>对当前研究的领域典型进行归类。扫；题目；年份；会议（A/B）</p><h2 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h2><p>使用的方法理论描述</p><h2 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h2><p>具体实验，设计实验，实验结果，SoTA对比</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习总结 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 学习总结 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>推荐系统框架</title>
+      <link href="/archives/65941a46.html"/>
+      <url>/archives/65941a46.html</url>
+      
+        <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><h1 id="推荐系统框架"><a href="#推荐系统框架" class="headerlink" title="推荐系统框架"></a>推荐系统框架</h1><p>理论——&gt;应用  fellow前沿的理论，应用到推荐系统</p><p>SoTA（state of the art）：意思是“最先进的”或“当前技术的最高水平”。通常用于描述某个领域中最新、最优或最具前沿性的技术、方法或成果。在研究和开发中，SoTA技术代表了当前最优的解决方案或技术水平，常常作为其他技术进步的参照。</p><h2 id="基于GNN推荐"><a href="#基于GNN推荐" class="headerlink" title="基于GNN推荐"></a>基于GNN推荐</h2><p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202410161513805.png" alt="image-20241015225747637"></p><h3 id="1、单序列推荐"><a href="#1、单序列推荐" class="headerlink" title="1、单序列推荐"></a>1、单序列推荐</h3><p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202410161513807.png" alt="image-20241015222428936"></p><p>sequential</p><p>RNN、LSTM、Transformer、Bert、Mamba（目前）</p><h3 id="2、用户-商品推荐"><a href="#2、用户-商品推荐" class="headerlink" title="2、用户-商品推荐"></a>2、用户-商品推荐</h3><p>Graph Neural Network（GNN）</p><p>GNN变体 —-&gt; GCN、GAT、GraphSAGE</p><p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202410161513808.png" alt="image-20241015225552246"></p><p>GCN</p><p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202410171935751.png" alt="image-20241017191943026"></p><h3 id="3、用户-用户推荐（social-network）"><a href="#3、用户-用户推荐（social-network）" class="headerlink" title="3、用户-用户推荐（social network）"></a>3、用户-用户推荐（social network）</h3><p>collaborate filtering（CF）协同过滤</p><p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202410161513809.png" alt="image-20241015225601014"></p><h3 id="4、商品-商品推荐（知识图谱）"><a href="#4、商品-商品推荐（知识图谱）" class="headerlink" title="4、商品-商品推荐（知识图谱）"></a>4、商品-商品推荐（知识图谱）</h3><p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202410161513810.png" alt="image-20241015225616515"></p><h2 id="基于对比学习推荐"><a href="#基于对比学习推荐" class="headerlink" title="基于对比学习推荐"></a>基于对比学习推荐</h2><p>contrastive learning（CL）</p><p>Self-supervised learning 自监督学习</p><p><strong>对比学习是一种特殊的无监督学习方法</strong>，旨在通过最大化相关样本之间的相似性并最小化不相关样本之间的相似性来学习数据表示。通常使用一种高自由度、自定义的规则生成正负样本。</p><h2 id="基于多模态推荐"><a href="#基于多模态推荐" class="headerlink" title="基于多模态推荐"></a>基于多模态推荐</h2><p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202410161513811.png" alt="image-20241016151312150"></p><p>多模态特征融合</p><p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202410161513812.png" alt="image-20241016151034962"></p><p>M×N的矩阵中取top-k（k经常取5,==10,20==）</p><h2 id="fellow团队"><a href="#fellow团队" class="headerlink" title="fellow团队"></a>fellow团队</h2><ol><li><p>中科大 何向南老师</p></li><li><p>中国人大 赵鑫老师</p><p><a href="https://www.recbole.io/">RecBole系列 —- RecBole</a></p><p><a href="https://github.com/RUCAIBox/RecBole">RUCAIBox/RecBole: A unified, comprehensive and efficient recommendation library (github.com)</a></p><p>快速baseline：</p><p>RecBole 是一个基于 PyTorch 实现的，面向研究者的，易于开发与复现的，统一、全面、高效的推荐系统代码库。 实现了91个推荐系统模型</p></li><li><p>港大 黄超老师  ——-==fellow==</p><p>论文代码开源可复现，方便快速code</p><p>SoTA参考</p></li><li><p>澳 殷老师  2021 AAAI论文</p></li></ol><h2 id="推荐系统发展历史"><a href="#推荐系统发展历史" class="headerlink" title="推荐系统发展历史"></a>推荐系统发展历史</h2><p><img src="https://gitee.com/huaiyuechusan/picture/raw/master/Typora/202410161513813.png" alt="image-20241015232716906"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 多模态推荐系统 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 深度学习 </tag>
+            
+            <tag> 多模态推荐系统 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>深度学习回归任务训练代码模版</title>
       <link href="/archives/638889b7.html"/>
       <url>/archives/638889b7.html</url>
