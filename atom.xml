@@ -3,11 +3,11 @@
   <title>SanShui的个人博客</title>
   
   <subtitle>欢迎来到我的博客</subtitle>
-  <link href="https://huaiyuechusan.gitee.io/atom.xml" rel="self"/>
+  <link href="https://huaiyuechusan.github.io/atom.xml" rel="self"/>
   
-  <link href="https://huaiyuechusan.gitee.io/"/>
+  <link href="https://huaiyuechusan.github.io/"/>
   <updated>2025-02-09T07:08:58.122Z</updated>
-  <id>https://huaiyuechusan.gitee.io/</id>
+  <id>https://huaiyuechusan.github.io/</id>
   
   <author>
     <name>SanShui</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>SanShui API 使用教程</title>
-    <link href="https://huaiyuechusan.gitee.io/archives/6ca065c5.html"/>
-    <id>https://huaiyuechusan.gitee.io/archives/6ca065c5.html</id>
+    <link href="https://huaiyuechusan.github.io/archives/6ca065c5.html"/>
+    <id>https://huaiyuechusan.github.io/archives/6ca065c5.html</id>
     <published>2025-01-09T00:06:00.000Z</published>
     <updated>2025-02-09T07:08:58.122Z</updated>
     
@@ -30,17 +30,17 @@
     
     
     
-    <category term="AI大模型" scheme="https://huaiyuechusan.gitee.io/categories/AI%E5%A4%A7%E6%A8%A1%E5%9E%8B/"/>
+    <category term="AI大模型" scheme="https://huaiyuechusan.github.io/categories/AI%E5%A4%A7%E6%A8%A1%E5%9E%8B/"/>
     
     
-    <category term="AI大模型" scheme="https://huaiyuechusan.gitee.io/tags/AI%E5%A4%A7%E6%A8%A1%E5%9E%8B/"/>
+    <category term="AI大模型" scheme="https://huaiyuechusan.github.io/tags/AI%E5%A4%A7%E6%A8%A1%E5%9E%8B/"/>
     
   </entry>
   
   <entry>
     <title>读论文框架</title>
-    <link href="https://huaiyuechusan.gitee.io/archives/f049facd.html"/>
-    <id>https://huaiyuechusan.gitee.io/archives/f049facd.html</id>
+    <link href="https://huaiyuechusan.github.io/archives/f049facd.html"/>
+    <id>https://huaiyuechusan.github.io/archives/f049facd.html</id>
     <published>2024-10-17T11:33:22.000Z</published>
     <updated>2024-10-17T11:52:09.521Z</updated>
     
@@ -51,17 +51,17 @@
     
     
     
-    <category term="学习总结" scheme="https://huaiyuechusan.gitee.io/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
+    <category term="学习总结" scheme="https://huaiyuechusan.github.io/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
     
     
-    <category term="学习总结" scheme="https://huaiyuechusan.gitee.io/tags/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
+    <category term="学习总结" scheme="https://huaiyuechusan.github.io/tags/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
   <entry>
     <title>推荐系统框架</title>
-    <link href="https://huaiyuechusan.gitee.io/archives/65941a46.html"/>
-    <id>https://huaiyuechusan.gitee.io/archives/65941a46.html</id>
+    <link href="https://huaiyuechusan.github.io/archives/65941a46.html"/>
+    <id>https://huaiyuechusan.github.io/archives/65941a46.html</id>
     <published>2024-10-17T02:41:56.000Z</published>
     <updated>2024-10-17T11:52:09.520Z</updated>
     
@@ -72,19 +72,19 @@
     
     
     
-    <category term="多模态推荐系统" scheme="https://huaiyuechusan.gitee.io/categories/%E5%A4%9A%E6%A8%A1%E6%80%81%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/"/>
+    <category term="多模态推荐系统" scheme="https://huaiyuechusan.github.io/categories/%E5%A4%9A%E6%A8%A1%E6%80%81%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/"/>
     
     
-    <category term="深度学习" scheme="https://huaiyuechusan.gitee.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    <category term="深度学习" scheme="https://huaiyuechusan.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="多模态推荐系统" scheme="https://huaiyuechusan.gitee.io/tags/%E5%A4%9A%E6%A8%A1%E6%80%81%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/"/>
+    <category term="多模态推荐系统" scheme="https://huaiyuechusan.github.io/tags/%E5%A4%9A%E6%A8%A1%E6%80%81%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>深度学习回归任务训练代码模版</title>
-    <link href="https://huaiyuechusan.gitee.io/archives/638889b7.html"/>
-    <id>https://huaiyuechusan.gitee.io/archives/638889b7.html</id>
+    <link href="https://huaiyuechusan.github.io/archives/638889b7.html"/>
+    <id>https://huaiyuechusan.github.io/archives/638889b7.html</id>
     <published>2024-09-05T05:07:22.000Z</published>
     <updated>2024-10-17T12:04:09.066Z</updated>
     
@@ -95,19 +95,19 @@
     
     
     
-    <category term="深度学习" scheme="https://huaiyuechusan.gitee.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    <category term="深度学习" scheme="https://huaiyuechusan.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="深度学习" scheme="https://huaiyuechusan.gitee.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    <category term="深度学习" scheme="https://huaiyuechusan.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="PyTorch" scheme="https://huaiyuechusan.gitee.io/tags/PyTorch/"/>
+    <category term="PyTorch" scheme="https://huaiyuechusan.github.io/tags/PyTorch/"/>
     
   </entry>
   
   <entry>
     <title>如何阅读PyTorch文档及常见PyTorch错误</title>
-    <link href="https://huaiyuechusan.gitee.io/archives/a86ba09b.html"/>
-    <id>https://huaiyuechusan.gitee.io/archives/a86ba09b.html</id>
+    <link href="https://huaiyuechusan.github.io/archives/a86ba09b.html"/>
+    <id>https://huaiyuechusan.github.io/archives/a86ba09b.html</id>
     <published>2024-09-04T04:44:49.000Z</published>
     <updated>2024-10-17T12:00:43.304Z</updated>
     
@@ -118,19 +118,19 @@
     
     
     
-    <category term="PyTorch" scheme="https://huaiyuechusan.gitee.io/categories/PyTorch/"/>
+    <category term="PyTorch" scheme="https://huaiyuechusan.github.io/categories/PyTorch/"/>
     
     
-    <category term="深度学习" scheme="https://huaiyuechusan.gitee.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    <category term="深度学习" scheme="https://huaiyuechusan.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="PyTorch" scheme="https://huaiyuechusan.gitee.io/tags/PyTorch/"/>
+    <category term="PyTorch" scheme="https://huaiyuechusan.github.io/tags/PyTorch/"/>
     
   </entry>
   
   <entry>
     <title>PyTorch入门实践：COVID-19 病例预测 (回归)</title>
-    <link href="https://huaiyuechusan.gitee.io/archives/ab7c3439.html"/>
-    <id>https://huaiyuechusan.gitee.io/archives/ab7c3439.html</id>
+    <link href="https://huaiyuechusan.github.io/archives/ab7c3439.html"/>
+    <id>https://huaiyuechusan.github.io/archives/ab7c3439.html</id>
     <published>2024-09-03T02:39:30.000Z</published>
     <updated>2024-10-17T12:01:19.579Z</updated>
     
@@ -141,19 +141,19 @@
     
     
     
-    <category term="PyTorch" scheme="https://huaiyuechusan.gitee.io/categories/PyTorch/"/>
+    <category term="PyTorch" scheme="https://huaiyuechusan.github.io/categories/PyTorch/"/>
     
     
-    <category term="深度学习" scheme="https://huaiyuechusan.gitee.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    <category term="深度学习" scheme="https://huaiyuechusan.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="PyTorch" scheme="https://huaiyuechusan.gitee.io/tags/PyTorch/"/>
+    <category term="PyTorch" scheme="https://huaiyuechusan.github.io/tags/PyTorch/"/>
     
   </entry>
   
   <entry>
     <title>快速入门PyTorch</title>
-    <link href="https://huaiyuechusan.gitee.io/archives/76ef551b.html"/>
-    <id>https://huaiyuechusan.gitee.io/archives/76ef551b.html</id>
+    <link href="https://huaiyuechusan.github.io/archives/76ef551b.html"/>
+    <id>https://huaiyuechusan.github.io/archives/76ef551b.html</id>
     <published>2024-09-02T02:36:30.000Z</published>
     <updated>2024-10-17T12:00:29.426Z</updated>
     
@@ -164,19 +164,19 @@
     
     
     
-    <category term="PyTorch" scheme="https://huaiyuechusan.gitee.io/categories/PyTorch/"/>
+    <category term="PyTorch" scheme="https://huaiyuechusan.github.io/categories/PyTorch/"/>
     
     
-    <category term="深度学习" scheme="https://huaiyuechusan.gitee.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    <category term="深度学习" scheme="https://huaiyuechusan.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="PyTorch" scheme="https://huaiyuechusan.gitee.io/tags/PyTorch/"/>
+    <category term="PyTorch" scheme="https://huaiyuechusan.github.io/tags/PyTorch/"/>
     
   </entry>
   
   <entry>
     <title>分类任务实现模型（投票式）集成代码模版</title>
-    <link href="https://huaiyuechusan.gitee.io/archives/6e00b65.html"/>
-    <id>https://huaiyuechusan.gitee.io/archives/6e00b65.html</id>
+    <link href="https://huaiyuechusan.github.io/archives/6e00b65.html"/>
+    <id>https://huaiyuechusan.github.io/archives/6e00b65.html</id>
     <published>2024-08-30T03:49:00.000Z</published>
     <updated>2024-10-17T11:59:46.164Z</updated>
     
@@ -187,19 +187,19 @@
     
     
     
-    <category term="深度学习" scheme="https://huaiyuechusan.gitee.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    <category term="深度学习" scheme="https://huaiyuechusan.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="深度学习" scheme="https://huaiyuechusan.gitee.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    <category term="深度学习" scheme="https://huaiyuechusan.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="PyTorch" scheme="https://huaiyuechusan.gitee.io/tags/PyTorch/"/>
+    <category term="PyTorch" scheme="https://huaiyuechusan.github.io/tags/PyTorch/"/>
     
   </entry>
   
   <entry>
     <title>深度学习分类模型训练代码模板</title>
-    <link href="https://huaiyuechusan.gitee.io/archives/3f9075ad.html"/>
-    <id>https://huaiyuechusan.gitee.io/archives/3f9075ad.html</id>
+    <link href="https://huaiyuechusan.github.io/archives/3f9075ad.html"/>
+    <id>https://huaiyuechusan.github.io/archives/3f9075ad.html</id>
     <published>2024-08-29T03:54:00.000Z</published>
     <updated>2024-10-17T12:00:00.481Z</updated>
     
@@ -210,19 +210,19 @@
     
     
     
-    <category term="深度学习" scheme="https://huaiyuechusan.gitee.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    <category term="深度学习" scheme="https://huaiyuechusan.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="深度学习" scheme="https://huaiyuechusan.gitee.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    <category term="深度学习" scheme="https://huaiyuechusan.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="PyTorch" scheme="https://huaiyuechusan.gitee.io/tags/PyTorch/"/>
+    <category term="PyTorch" scheme="https://huaiyuechusan.github.io/tags/PyTorch/"/>
     
   </entry>
   
   <entry>
     <title>从零入门CV图像竞赛（2024全球Deepfake攻防挑战赛）</title>
-    <link href="https://huaiyuechusan.gitee.io/archives/c3b7887e.html"/>
-    <id>https://huaiyuechusan.gitee.io/archives/c3b7887e.html</id>
+    <link href="https://huaiyuechusan.github.io/archives/c3b7887e.html"/>
+    <id>https://huaiyuechusan.github.io/archives/c3b7887e.html</id>
     <published>2024-08-04T12:52:00.000Z</published>
     <updated>2024-10-17T11:58:45.714Z</updated>
     
@@ -233,21 +233,21 @@
     
     
     
-    <category term="竞赛" scheme="https://huaiyuechusan.gitee.io/categories/%E7%AB%9E%E8%B5%9B/"/>
+    <category term="竞赛" scheme="https://huaiyuechusan.github.io/categories/%E7%AB%9E%E8%B5%9B/"/>
     
     
-    <category term="深度学习" scheme="https://huaiyuechusan.gitee.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    <category term="深度学习" scheme="https://huaiyuechusan.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="竞赛" scheme="https://huaiyuechusan.gitee.io/tags/%E7%AB%9E%E8%B5%9B/"/>
+    <category term="竞赛" scheme="https://huaiyuechusan.github.io/tags/%E7%AB%9E%E8%B5%9B/"/>
     
-    <category term="计算机视觉" scheme="https://huaiyuechusan.gitee.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"/>
+    <category term="计算机视觉" scheme="https://huaiyuechusan.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"/>
     
   </entry>
   
   <entry>
     <title>大模型开发实战</title>
-    <link href="https://huaiyuechusan.gitee.io/archives/763f7a6d.html"/>
-    <id>https://huaiyuechusan.gitee.io/archives/763f7a6d.html</id>
+    <link href="https://huaiyuechusan.github.io/archives/763f7a6d.html"/>
+    <id>https://huaiyuechusan.github.io/archives/763f7a6d.html</id>
     <published>2024-06-19T15:01:00.000Z</published>
     <updated>2024-10-17T11:59:24.695Z</updated>
     
@@ -258,19 +258,19 @@
     
     
     
-    <category term="AI大模型" scheme="https://huaiyuechusan.gitee.io/categories/AI%E5%A4%A7%E6%A8%A1%E5%9E%8B/"/>
+    <category term="AI大模型" scheme="https://huaiyuechusan.github.io/categories/AI%E5%A4%A7%E6%A8%A1%E5%9E%8B/"/>
     
     
-    <category term="大模型" scheme="https://huaiyuechusan.gitee.io/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/"/>
+    <category term="大模型" scheme="https://huaiyuechusan.github.io/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/"/>
     
-    <category term="Python" scheme="https://huaiyuechusan.gitee.io/tags/Python/"/>
+    <category term="Python" scheme="https://huaiyuechusan.github.io/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>本地基于知识库的大模型的使用教程</title>
-    <link href="https://huaiyuechusan.gitee.io/archives/9ac21f23.html"/>
-    <id>https://huaiyuechusan.gitee.io/archives/9ac21f23.html</id>
+    <link href="https://huaiyuechusan.github.io/archives/9ac21f23.html"/>
+    <id>https://huaiyuechusan.github.io/archives/9ac21f23.html</id>
     <published>2024-05-02T15:37:00.000Z</published>
     <updated>2024-10-17T11:58:34.034Z</updated>
     
@@ -281,19 +281,19 @@
     
     
     
-    <category term="AI大模型" scheme="https://huaiyuechusan.gitee.io/categories/AI%E5%A4%A7%E6%A8%A1%E5%9E%8B/"/>
+    <category term="AI大模型" scheme="https://huaiyuechusan.github.io/categories/AI%E5%A4%A7%E6%A8%A1%E5%9E%8B/"/>
     
     
-    <category term="大模型" scheme="https://huaiyuechusan.gitee.io/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/"/>
+    <category term="大模型" scheme="https://huaiyuechusan.github.io/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/"/>
     
-    <category term="Python" scheme="https://huaiyuechusan.gitee.io/tags/Python/"/>
+    <category term="Python" scheme="https://huaiyuechusan.github.io/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>ShellScript脚本编程</title>
-    <link href="https://huaiyuechusan.gitee.io/archives/d8093044.html"/>
-    <id>https://huaiyuechusan.gitee.io/archives/d8093044.html</id>
+    <link href="https://huaiyuechusan.github.io/archives/d8093044.html"/>
+    <id>https://huaiyuechusan.github.io/archives/d8093044.html</id>
     <published>2024-02-03T13:28:00.000Z</published>
     <updated>2024-10-17T12:01:05.056Z</updated>
     
@@ -304,19 +304,19 @@
     
     
     
-    <category term="Liunx" scheme="https://huaiyuechusan.gitee.io/categories/Liunx/"/>
+    <category term="Liunx" scheme="https://huaiyuechusan.github.io/categories/Liunx/"/>
     
     
-    <category term="Liunx" scheme="https://huaiyuechusan.gitee.io/tags/Liunx/"/>
+    <category term="Liunx" scheme="https://huaiyuechusan.github.io/tags/Liunx/"/>
     
-    <category term="Shell脚本" scheme="https://huaiyuechusan.gitee.io/tags/Shell%E8%84%9A%E6%9C%AC/"/>
+    <category term="Shell脚本" scheme="https://huaiyuechusan.github.io/tags/Shell%E8%84%9A%E6%9C%AC/"/>
     
   </entry>
   
   <entry>
     <title>Linux环境编程基础</title>
-    <link href="https://huaiyuechusan.gitee.io/archives/3cc384d0.html"/>
-    <id>https://huaiyuechusan.gitee.io/archives/3cc384d0.html</id>
+    <link href="https://huaiyuechusan.github.io/archives/3cc384d0.html"/>
+    <id>https://huaiyuechusan.github.io/archives/3cc384d0.html</id>
     <published>2024-02-03T10:26:00.000Z</published>
     <updated>2024-10-17T11:58:13.862Z</updated>
     
@@ -327,19 +327,19 @@
     
     
     
-    <category term="Liunx" scheme="https://huaiyuechusan.gitee.io/categories/Liunx/"/>
+    <category term="Liunx" scheme="https://huaiyuechusan.github.io/categories/Liunx/"/>
     
     
-    <category term="学习技术" scheme="https://huaiyuechusan.gitee.io/tags/%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%9C%AF/"/>
+    <category term="学习技术" scheme="https://huaiyuechusan.github.io/tags/%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="Liunx" scheme="https://huaiyuechusan.gitee.io/tags/Liunx/"/>
+    <category term="Liunx" scheme="https://huaiyuechusan.github.io/tags/Liunx/"/>
     
   </entry>
   
   <entry>
     <title>下载M3U8格式加密视频</title>
-    <link href="https://huaiyuechusan.gitee.io/archives/d4b1abad.html"/>
-    <id>https://huaiyuechusan.gitee.io/archives/d4b1abad.html</id>
+    <link href="https://huaiyuechusan.github.io/archives/d4b1abad.html"/>
+    <id>https://huaiyuechusan.github.io/archives/d4b1abad.html</id>
     <published>2024-01-17T09:27:00.000Z</published>
     <updated>2024-10-17T12:02:02.720Z</updated>
     
@@ -350,19 +350,19 @@
     
     
     
-    <category term="爬虫" scheme="https://huaiyuechusan.gitee.io/categories/%E7%88%AC%E8%99%AB/"/>
+    <category term="爬虫" scheme="https://huaiyuechusan.github.io/categories/%E7%88%AC%E8%99%AB/"/>
     
     
-    <category term="爬虫" scheme="https://huaiyuechusan.gitee.io/tags/%E7%88%AC%E8%99%AB/"/>
+    <category term="学习技术" scheme="https://huaiyuechusan.github.io/tags/%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="学习技术" scheme="https://huaiyuechusan.gitee.io/tags/%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%9C%AF/"/>
+    <category term="爬虫" scheme="https://huaiyuechusan.github.io/tags/%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   
   <entry>
     <title>竞赛总结：智能驾驶汽车虚拟仿真视频数据理解</title>
-    <link href="https://huaiyuechusan.gitee.io/archives/283f9737.html"/>
-    <id>https://huaiyuechusan.gitee.io/archives/283f9737.html</id>
+    <link href="https://huaiyuechusan.github.io/archives/283f9737.html"/>
+    <id>https://huaiyuechusan.github.io/archives/283f9737.html</id>
     <published>2024-01-14T13:59:00.000Z</published>
     <updated>2024-10-17T12:00:16.756Z</updated>
     
@@ -373,21 +373,21 @@
     
     
     
-    <category term="竞赛" scheme="https://huaiyuechusan.gitee.io/categories/%E7%AB%9E%E8%B5%9B/"/>
+    <category term="竞赛" scheme="https://huaiyuechusan.github.io/categories/%E7%AB%9E%E8%B5%9B/"/>
     
     
-    <category term="深度学习" scheme="https://huaiyuechusan.gitee.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    <category term="深度学习" scheme="https://huaiyuechusan.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="竞赛" scheme="https://huaiyuechusan.gitee.io/tags/%E7%AB%9E%E8%B5%9B/"/>
+    <category term="竞赛" scheme="https://huaiyuechusan.github.io/tags/%E7%AB%9E%E8%B5%9B/"/>
     
-    <category term="CV" scheme="https://huaiyuechusan.gitee.io/tags/CV/"/>
+    <category term="CV" scheme="https://huaiyuechusan.github.io/tags/CV/"/>
     
   </entry>
   
   <entry>
     <title>函数式编程和Python新核心特性</title>
-    <link href="https://huaiyuechusan.gitee.io/archives/fab44cdf.html"/>
-    <id>https://huaiyuechusan.gitee.io/archives/fab44cdf.html</id>
+    <link href="https://huaiyuechusan.github.io/archives/fab44cdf.html"/>
+    <id>https://huaiyuechusan.github.io/archives/fab44cdf.html</id>
     <published>2024-01-14T12:24:00.000Z</published>
     <updated>2024-10-17T11:57:53.429Z</updated>
     
@@ -398,19 +398,19 @@
     
     
     
-    <category term="Python" scheme="https://huaiyuechusan.gitee.io/categories/Python/"/>
+    <category term="Python" scheme="https://huaiyuechusan.github.io/categories/Python/"/>
     
     
-    <category term="学习技术" scheme="https://huaiyuechusan.gitee.io/tags/%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%9C%AF/"/>
+    <category term="学习技术" scheme="https://huaiyuechusan.github.io/tags/%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="Python" scheme="https://huaiyuechusan.gitee.io/tags/Python/"/>
+    <category term="Python" scheme="https://huaiyuechusan.github.io/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>Python 网络与并发编程</title>
-    <link href="https://huaiyuechusan.gitee.io/archives/984515cf.html"/>
-    <id>https://huaiyuechusan.gitee.io/archives/984515cf.html</id>
+    <link href="https://huaiyuechusan.github.io/archives/984515cf.html"/>
+    <id>https://huaiyuechusan.github.io/archives/984515cf.html</id>
     <published>2024-01-06T12:16:00.000Z</published>
     <updated>2024-10-17T11:57:47.423Z</updated>
     
@@ -421,19 +421,19 @@
     
     
     
-    <category term="Python" scheme="https://huaiyuechusan.gitee.io/categories/Python/"/>
+    <category term="Python" scheme="https://huaiyuechusan.github.io/categories/Python/"/>
     
     
-    <category term="学习技术" scheme="https://huaiyuechusan.gitee.io/tags/%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%9C%AF/"/>
+    <category term="学习技术" scheme="https://huaiyuechusan.github.io/tags/%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="Python" scheme="https://huaiyuechusan.gitee.io/tags/Python/"/>
+    <category term="Python" scheme="https://huaiyuechusan.github.io/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>Python深入和提高</title>
-    <link href="https://huaiyuechusan.gitee.io/archives/8df5f8b9.html"/>
-    <id>https://huaiyuechusan.gitee.io/archives/8df5f8b9.html</id>
+    <link href="https://huaiyuechusan.github.io/archives/8df5f8b9.html"/>
+    <id>https://huaiyuechusan.github.io/archives/8df5f8b9.html</id>
     <published>2023-12-12T13:44:00.000Z</published>
     <updated>2024-10-17T11:57:36.906Z</updated>
     
@@ -444,19 +444,19 @@
     
     
     
-    <category term="Python" scheme="https://huaiyuechusan.gitee.io/categories/Python/"/>
+    <category term="Python" scheme="https://huaiyuechusan.github.io/categories/Python/"/>
     
     
-    <category term="学习技术" scheme="https://huaiyuechusan.gitee.io/tags/%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%9C%AF/"/>
+    <category term="学习技术" scheme="https://huaiyuechusan.github.io/tags/%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="Python" scheme="https://huaiyuechusan.gitee.io/tags/Python/"/>
+    <category term="Python" scheme="https://huaiyuechusan.github.io/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>通过nginx访问tomcat中SpringMVC应用</title>
-    <link href="https://huaiyuechusan.gitee.io/archives/7cb9f0a8.html"/>
-    <id>https://huaiyuechusan.gitee.io/archives/7cb9f0a8.html</id>
+    <link href="https://huaiyuechusan.github.io/archives/7cb9f0a8.html"/>
+    <id>https://huaiyuechusan.github.io/archives/7cb9f0a8.html</id>
     <published>2023-11-22T13:39:00.000Z</published>
     <updated>2024-10-17T12:02:23.321Z</updated>
     
@@ -467,10 +467,10 @@
     
     
     
-    <category term="学习总结" scheme="https://huaiyuechusan.gitee.io/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
+    <category term="学习总结" scheme="https://huaiyuechusan.github.io/categories/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
     
     
-    <category term="学习技术" scheme="https://huaiyuechusan.gitee.io/tags/%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%9C%AF/"/>
+    <category term="学习技术" scheme="https://huaiyuechusan.github.io/tags/%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
