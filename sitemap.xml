@@ -341,6 +341,13 @@
   </url>
   
   <url>
+    <loc>https://huaiyuechusan.gitee.io/tags/%E5%A4%9A%E6%A8%A1%E6%80%81%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/</loc>
+    <lastmod>2025-02-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://huaiyuechusan.gitee.io/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/</loc>
     <lastmod>2025-02-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -349,13 +356,6 @@
   
   <url>
     <loc>https://huaiyuechusan.gitee.io/tags/Python/</loc>
-    <lastmod>2025-02-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://huaiyuechusan.gitee.io/tags/%E5%A4%9A%E6%A8%A1%E6%80%81%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/</loc>
     <lastmod>2025-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -441,14 +441,14 @@
   </url>
   
   <url>
-    <loc>https://huaiyuechusan.gitee.io/categories/AI%E5%A4%A7%E6%A8%A1%E5%9E%8B/</loc>
+    <loc>https://huaiyuechusan.gitee.io/categories/%E5%A4%9A%E6%A8%A1%E6%80%81%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/</loc>
     <lastmod>2025-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://huaiyuechusan.gitee.io/categories/%E5%A4%9A%E6%A8%A1%E6%80%81%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/</loc>
+    <loc>https://huaiyuechusan.gitee.io/categories/AI%E5%A4%A7%E6%A8%A1%E5%9E%8B/</loc>
     <lastmod>2025-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
